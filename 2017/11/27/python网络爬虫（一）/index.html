@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="requests库1.安装管理员权限cmd，运行pip install request，安装成功测试（例子）：12345import requestsr=requests.get(&quot;http://www.baidu.com&quot;)print(r.status_code)            //状态码">
+<meta name="description" content="requests库1.安装管理员权限cmd，运行install request```，安装成功1234567测试（例子）：```pythonimport requestsr=requests.get(&amp;quot;http://www.baidu.com&amp;quot;)print(r.status_code">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python网络爬虫（一）">
 <meta property="og:url" content="http://yoursite.com/2017/11/27/python网络爬虫（一）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="requests库1.安装管理员权限cmd，运行pip install request，安装成功测试（例子）：12345import requestsr=requests.get(&quot;http://www.baidu.com&quot;)print(r.status_code)            //状态码，返回值为200说明成功r.encoding=&apos;utf-8&apos;              //改为ut">
-<meta property="og:updated_time" content="2017-11-27T12:45:47.633Z">
+<meta property="og:description" content="requests库1.安装管理员权限cmd，运行install request```，安装成功1234567测试（例子）：```pythonimport requestsr=requests.get(&amp;quot;http://www.baidu.com&amp;quot;)print(r.status_code)            //状态码，返回值为200说明成功r.encoding=&amp;apos;u">
+<meta property="og:updated_time" content="2017-11-28T09:08:17.828Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python网络爬虫（一）">
-<meta name="twitter:description" content="requests库1.安装管理员权限cmd，运行pip install request，安装成功测试（例子）：12345import requestsr=requests.get(&quot;http://www.baidu.com&quot;)print(r.status_code)            //状态码，返回值为200说明成功r.encoding=&apos;utf-8&apos;              //改为ut">
+<meta name="twitter:description" content="requests库1.安装管理员权限cmd，运行install request```，安装成功1234567测试（例子）：```pythonimport requestsr=requests.get(&amp;quot;http://www.baidu.com&amp;quot;)print(r.status_code)            //状态码，返回值为200说明成功r.encoding=&amp;apos;u">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -324,9 +324,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h2><h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>管理员权限cmd，运行pip install request，安装成功<br>测试（例子）：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">r=requests.get(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">print(r.status_code)            //状态码，返回值为<span class="number">200</span>说明成功</span><br><span class="line">r.encoding=<span class="string">'utf-8'</span>              //改为utf8编码</span><br><span class="line">print(r.text)                   //打印网页内容</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-requests库的方法"><a href="#2-requests库的方法" class="headerlink" title="2.requests库的方法"></a>2.requests库的方法</h3><h4 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h4><a id="more"></a>
+        <h1 id="requests库"><a href="#requests库" class="headerlink" title="requests库"></a>requests库</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>管理员权限cmd，运行<figure class="highlight plain"><figcaption><span>install request```，安装成功</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">测试（例子）：</span><br><span class="line">```python</span><br><span class="line">import requests</span><br><span class="line">r=requests.get(&quot;http://www.baidu.com&quot;)</span><br><span class="line">print(r.status_code)            //状态码，返回值为200说明成功</span><br><span class="line">r.encoding=&apos;utf-8&apos;              //改为utf8编码</span><br><span class="line">print(r.text)                   //打印网页内容</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-requests库的方法"><a href="#2-requests库的方法" class="headerlink" title="2.requests库的方法"></a>2.requests库的方法</h2><h3 id="get方法"><a href="#get方法" class="headerlink" title="get方法"></a>get方法</h3><a id="more"></a>
 <p><code>r=requests.get(url)</code>构造一个向服务器请求资源的requests对象，返回一个包含服务器资源的response对象，包含从服务器返回的所有相关资源。<br><strong>response对象：</strong><br>r.status_code状态码，200表示访问成功<br>r.text http响应内容的字符串形式，即，url对应的页面内容<br>r.headers返回get请求获得页面的头部信息<br>r.encoding从http header中猜测的响应内容编码方式<br>r.apparent_encoding从内容中分析出的响应内容编码方式<br>r.content http响应内容的二进制形式<br><strong> <em>注：python大小写敏感</em> </strong><br><code>requests.get(url,params=None,**kwargs)</code><br>url : 拟获取页面的url链接<br>params : url中的额外参数，字典或字节流格式，可选<br>**kwargs: 12个控制访问的参数</p>
+<h3 id="request方法"><a href="#request方法" class="headerlink" title="request方法"></a>request方法</h3><p><code>requests.request(url,params=None,**kwargs)</code><br>**kwargs：13个访问控制参数，均为可选项</p>
+<p>params可以把一些键值对增加到URL中，使URL再去访问时不止访问了这个资源，同时也代入了一些参数。服务器接受这些参数，并根据这些参数筛选资源，返回回来。<br>data字典、字节序列或文件对象，作为requests的内容，向服务器提供或提交资源时使用<br>json json格式数据<br>heads http头的相关域eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hd=&#123;&apos;user-agent&apos;:&apos;Chrome/10&apos;&#125;       Chrome浏览器第10个版本，模拟该浏览器向服务器发请求</span><br><span class="line">r=requests.request(&apos;POST&apos;,&apos;http://python123.io/ws&apos;,heads=hd)</span><br></pre></td></tr></table></figure></p>
+<p>cookies：从http协议中解析cookie<br>auth：元组类型，支持http认证<br>files：字典类型，传输文件，像某个链接提交某个字段<br>timeout：设定超时时间，单位为秒<br>proxies：字典类型，设定访问代理服务器，可以增加登录认证，可以隐藏用户爬取网页时原IP地址信息eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pxs=&#123;&apos;http&apos;:&apos;http://user:pass@10.10.10.1:1234&apos;</span><br><span class="line">&apos;https&apos;:&apos;https://10.10.10.1:4321&apos;&#125;</span><br><span class="line">r=requests.request(&apos;GET&apos;,&apos;http://www.baidu.com&apos;,proxies=pxs)</span><br></pre></td></tr></table></figure></p>
+<p>allow_redirexts：true/false，默认true，重定向开关<br>stream：true/false，默认true，获取内容立即下载开关<br>verify：true/false，默认true，认证SSL证书开关<br>cert：本地SSL证书路径</p>
+<h3 id="head方法"><a href="#head方法" class="headerlink" title="head方法"></a>head方法</h3><p>requests.head(url,**kwargs)</p>
+<h3 id="post方法"><a href="#post方法" class="headerlink" title="post方法"></a>post方法</h3><p>requests.post(url,data=None,json=None,**kwargs)</p>
+<h3 id="put方法"><a href="#put方法" class="headerlink" title="put方法"></a>put方法</h3><p>requests.put(url,data=None,**kwargs)</p>
+<h3 id="patch方法"><a href="#patch方法" class="headerlink" title="patch方法"></a>patch方法</h3><p>requests.patch(url,data=None,**kwargs)</p>
+<h3 id="delete方法"><a href="#delete方法" class="headerlink" title="delete方法"></a>delete方法</h3><p>requests.delete(url,**kwargs)</p>
 <p><strong>requests异常</strong><br>r.raise_for_status() 如果不是200，产生异常requests.HTTPError</p>
 
       
@@ -339,7 +348,7 @@
         <p><span>本文标题:</span><a href="/2017/11/27/python网络爬虫（一）/">python网络爬虫（一）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">聪聪无敌</a></p>
         <p><span>发布时间:</span>2017-11-27, 19:50:28</p>
-        <p><span>最后更新:</span>2017-11-27, 20:45:47</p>
+        <p><span>最后更新:</span>2017-11-28, 17:08:17</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/11/27/python网络爬虫（一）/" title="python网络爬虫（一）">http://yoursite.com/2017/11/27/python网络爬虫（一）/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/11/27/python网络爬虫（一）/　　作者: 聪聪无敌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -369,7 +378,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#requests库"><span class="toc-number">1.</span> <span class="toc-text">requests库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-requests库的方法"><span class="toc-number">1.2.</span> <span class="toc-text">2.requests库的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#get方法"><span class="toc-number">1.2.1.</span> <span class="toc-text">get方法</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#requests库"><span class="toc-number">1.</span> <span class="toc-text">requests库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装"><span class="toc-number">1.1.</span> <span class="toc-text">1.安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-requests库的方法"><span class="toc-number">1.2.</span> <span class="toc-text">2.requests库的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get方法"><span class="toc-number">1.2.1.</span> <span class="toc-text">get方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#request方法"><span class="toc-number">1.2.2.</span> <span class="toc-text">request方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#head方法"><span class="toc-number">1.2.3.</span> <span class="toc-text">head方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#post方法"><span class="toc-number">1.2.4.</span> <span class="toc-text">post方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#put方法"><span class="toc-number">1.2.5.</span> <span class="toc-text">put方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#patch方法"><span class="toc-number">1.2.6.</span> <span class="toc-text">patch方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete方法"><span class="toc-number">1.2.7.</span> <span class="toc-text">delete方法</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
