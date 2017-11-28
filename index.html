@@ -224,7 +224,7 @@
                 
                 <section class="switch-part switch-part4">
                 
-                    <div id="js-aboutme">专注于前端</div>
+                    <div id="js-aboutme">目前仅仅是一枚菜鸟，需要加油喔(*╹▽╹*)</div>
                 </section>
                 
             </div>
@@ -293,6 +293,15 @@
       <time datetime="2017-11-28T11:13:59.000Z" itemprop="datePublished">2017-11-28</time>
 </a>
 
+ 
+    <a href="/2017/11/28/python网络爬虫（二）/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/11/28/python网络爬虫（二）/"></span>
+        
+    </a>
 
     </div>
   
@@ -357,6 +366,15 @@
       <time datetime="2017-11-27T11:50:28.000Z" itemprop="datePublished">2017-11-27</time>
 </a>
 
+ 
+    <a href="/2017/11/27/python网络爬虫（一）/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/11/27/python网络爬虫（一）/"></span>
+        
+    </a>
 
     </div>
   
@@ -421,6 +439,15 @@
       <time datetime="2017-11-26T04:38:19.000Z" itemprop="datePublished">2017-11-26</time>
 </a>
 
+ 
+    <a href="/2017/11/26/my-first-blog/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/11/26/my-first-blog/"></span>
+        
+    </a>
 
     </div>
   
@@ -481,6 +508,15 @@
       <time datetime="2017-11-23T15:40:48.309Z" itemprop="datePublished">2017-11-23</time>
 </a>
 
+ 
+    <a href="/2017/11/23/hello-world/#comments" title="查看评论">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        
+        
+            <span class="disqus-comment-count" data-disqus-identifier="2017/11/23/hello-world/"></span>
+        
+    </a>
 
     </div>
   
@@ -595,6 +631,22 @@
 
     
 
+    
+        <script id="dsq-count-scr" src="//.disqus.com/count.js" async></script>
+        <script>
+            if ($(".left-col").is(":visible")) {
+                var $disqusCount = $(".disqus-comment-count");
+                $disqusCount.bind("DOMNodeInserted", function(e) {
+                    var num = $(this).text().replace(/[^0-9]/ig,"");
+                    if (num > 0) {
+                        $(this).siblings(".count-comment").text(num);
+                    }
+                    $(this).remove();
+                })
+            } else {
+                $(".disqus-comment-count").remove();
+            }
+        </script>
      
 
 
