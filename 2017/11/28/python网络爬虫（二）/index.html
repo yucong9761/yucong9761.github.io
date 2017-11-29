@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/28/python网络爬虫（二）/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="网站防爬虫1.审查来源2.robots协议作用：网站告知网络爬虫哪些页面可以抓取，哪些不行。">
-<meta property="og:updated_time" content="2017-11-28T12:12:07.880Z">
+<meta property="og:updated_time" content="2017-11-29T11:00:39.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python网络爬虫（二）">
 <meta name="twitter:description" content="网站防爬虫1.审查来源2.robots协议作用：网站告知网络爬虫哪些页面可以抓取，哪些不行。">
@@ -197,7 +197,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
                     </div>
                 </section>
                 
@@ -326,8 +326,6 @@
           
         <h2 id="网站防爬虫"><a href="#网站防爬虫" class="headerlink" title="网站防爬虫"></a>网站防爬虫</h2><h3 id="1-审查来源"><a href="#1-审查来源" class="headerlink" title="1.审查来源"></a>1.审查来源</h3><h3 id="2-robots协议"><a href="#2-robots协议" class="headerlink" title="2.robots协议"></a>2.robots协议</h3><p>作用：网站告知网络爬虫哪些页面可以抓取，哪些不行。<br><a id="more"></a><br>网站根目录robots.txt文件。<br>eg：<a href="https://www.jd.com/robot.txt京东的robots协议" target="_blank" rel="noopener">https://www.jd.com/robot.txt京东的robots协议</a><br>*：所有，/：根目录</p>
 <p><em>可以不遵守：类人行为可以不遵守</em></p>
-<h2 id="爬虫实例"><a href="#爬虫实例" class="headerlink" title="爬虫实例"></a>爬虫实例</h2><h3 id="爬取亚马逊"><a href="#爬取亚马逊" class="headerlink" title="爬取亚马逊"></a>爬取亚马逊</h3><p>注：通过对网站访问的头，判断是否由爬虫引起<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r.requests.headers</span><br><span class="line">输出：&#123;&apos;User-Agent&apos;: &apos;python-requests/2.18.4&apos;, &apos;Accept-Encoding&apos;: &apos;gzip, deflate&apos;, &apos;Accept&apos;: &apos;*/*&apos;, &apos;Connection&apos;: &apos;keep-alive&apos;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>user-agent中提供python，则是来自爬虫软件，可以更改头部信息。</p>
 
       
     </div>
@@ -339,7 +337,7 @@
         <p><span>本文标题:</span><a href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">聪聪无敌</a></p>
         <p><span>发布时间:</span>2017-11-28, 19:13:59</p>
-        <p><span>最后更新:</span>2017-11-28, 20:12:07</p>
+        <p><span>最后更新:</span>2017-11-29, 19:00:39</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/11/28/python网络爬虫（二）/" title="python网络爬虫（二）">http://yoursite.com/2017/11/28/python网络爬虫（二）/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/11/28/python网络爬虫（二）/　　作者: 聪聪无敌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -353,6 +351,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/11/29/软件工程复习（一）/">
+                    软件工程复习（一）
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -369,7 +373,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网站防爬虫"><span class="toc-number">1.</span> <span class="toc-text">网站防爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-审查来源"><span class="toc-number">1.1.</span> <span class="toc-text">1.审查来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-robots协议"><span class="toc-number">1.2.</span> <span class="toc-text">2.robots协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#爬虫实例"><span class="toc-number">2.</span> <span class="toc-text">爬虫实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#爬取亚马逊"><span class="toc-number">2.1.</span> <span class="toc-text">爬取亚马逊</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网站防爬虫"><span class="toc-number">1.</span> <span class="toc-text">网站防爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-审查来源"><span class="toc-number">1.1.</span> <span class="toc-text">1.审查来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-robots协议"><span class="toc-number">1.2.</span> <span class="toc-text">2.robots协议</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -425,7 +429,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/11/29/软件工程复习（一）/" title="上一篇: 软件工程复习（一）">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -437,7 +443,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/python网络爬虫（一）/">python网络爬虫（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（三）/">python网络爬虫（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/软件工程复习（一）/">软件工程复习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/python网络爬虫（一）/">python网络爬虫（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/hello-world/">Hello World</a></li></ul>
 
 
 
