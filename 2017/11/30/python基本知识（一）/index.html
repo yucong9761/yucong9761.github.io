@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/11/30/python基本知识（一）/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="字符串字符串是单个字符的字符串序列，其他类型的序列还包括列表和元组。 序列的操作12- len()验证其长度```len(S)  索引操作得到其各个元素">
-<meta property="og:updated_time" content="2017-11-30T15:09:21.519Z">
+<meta property="og:updated_time" content="2017-12-01T08:36:44.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python基本知识（一）">
 <meta name="twitter:description" content="字符串字符串是单个字符的字符串序列，其他类型的序列还包括列表和元组。 序列的操作12- len()验证其长度```len(S)  索引操作得到其各个元素">
@@ -341,6 +341,21 @@
 <li>加号乘号<br>作为一个序列，字符串支持加号进行合并（将两个字符串合成为一个新的字符串）。乘号是将原字符串重复多少次。</li>
 <li>不可变性<br>字符串在python中具有不可变性——在创建后不能就地改变。例如：不能通过对其某一位置进行赋值而改变字符串，但是可以通过建立一个新的字符串并以同一个变量名对其进行赋值。python在运行过程中会清理旧的对象。</li>
 </ul>
+<p><strong>注意：以上操作均为一个真正的序列操作，同理，这些操作不局限于字符串，在python中其他序列中也会工作，包括列表和元组。以下，是字符串独有的一些操作方法。</strong></p>
+<h3 id="字符串特有操作"><a href="#字符串特有操作" class="headerlink" title="字符串特有操作"></a>字符串特有操作</h3><ul>
+<li>find方法<br>字符串find方法是一个基本的子字符串查找的操作（没有，返回-1。否则，返回一个传入子字符串的偏移量）</li>
+<li>replace方法<br>对全局进行搜索和替换，例如<code>S.replace(&#39;pa&#39;,&#39;XYZ&#39;)</code>将S中的pa全部替换为XYZ。<strong>S没有被改变</strong></li>
+<li>split方法<br>通过分隔符将字符串拆分为子字符串，例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">S=&quot;aaa,bbbb,ccc&quot;</span><br><span class="line">S.split(&apos;,&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>按逗号将S拆分。</p>
+<ul>
+<li>upper方法<br>将字符串中小写字母变大写</li>
+<li>isalpha方法<br>检测字符串是否只由字母组成。</li>
+<li>rstrip方法<br>删除字符串末尾的指定字符(默认为空格)<code>str.rstrip([chars])</code><br><strong>还有其他方法，当S为字符串时<code>dir(S)</code>可以搜索方法，dir函数给出了方法的名称。如果要查询他们是做什么的，例如查询replace方法是做什么的，使用<code>help(S.replace)</code>查询</strong><br>python除了允许字符串包括在单引号或双引号中（代表相同的东西），还允许在三引号（三个单引号或三个双引号）中包括多行字符串，例如<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">S=&quot;&quot;&quot;aaa</span><br><span class="line">  bbb</span><br><span class="line">  ccc&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h3><p>导入名为re的模块，这个模块包含了类似搜索、分割和替换等调用。类似正则表达式的匹配。<br><a href="https://www.cnblogs.com/MrFiona/p/5954084.html" target="_blank" rel="noopener">https://www.cnblogs.com/MrFiona/p/5954084.html</a></p>
 
       
     </div>
@@ -352,7 +367,7 @@
         <p><span>本文标题:</span><a href="/2017/11/30/python基本知识（一）/">python基本知识（一）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">聪聪无敌</a></p>
         <p><span>发布时间:</span>2017-11-30, 21:03:03</p>
-        <p><span>最后更新:</span>2017-11-30, 23:09:21</p>
+        <p><span>最后更新:</span>2017-12-01, 16:36:44</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/11/30/python基本知识（一）/" title="python基本知识（一）">http://yoursite.com/2017/11/30/python基本知识（一）/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/11/30/python基本知识（一）/　　作者: 聪聪无敌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -382,7 +397,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串"><span class="toc-number">1.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#序列的操作"><span class="toc-number">1.1.</span> <span class="toc-text">序列的操作</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串"><span class="toc-number">1.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#序列的操作"><span class="toc-number">1.1.</span> <span class="toc-text">序列的操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串特有操作"><span class="toc-number">1.2.</span> <span class="toc-text">字符串特有操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式匹配"><span class="toc-number">1.3.</span> <span class="toc-text">模式匹配</span></a></li></ol></li></ol>
         
     </div>
     <style>
