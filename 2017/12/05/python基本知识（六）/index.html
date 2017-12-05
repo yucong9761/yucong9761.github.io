@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="网站防爬虫1.审查来源2.robots协议作用：网站告知网络爬虫哪些页面可以抓取，哪些不行。">
-<meta name="keywords" content="python,爬虫">
+<meta name="description" content="动态类型简介python中，类型在运行过程中自动决定，不是通过代码声明。">
+<meta name="keywords" content="python,动态类型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python网络爬虫（二）">
-<meta property="og:url" content="http://yoursite.com/2017/11/28/python网络爬虫（二）/index.html">
+<meta property="og:title" content="python基本知识（六）">
+<meta property="og:url" content="http://yoursite.com/2017/12/05/python基本知识（六）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="网站防爬虫1.审查来源2.robots协议作用：网站告知网络爬虫哪些页面可以抓取，哪些不行。">
-<meta property="og:updated_time" content="2017-11-30T13:11:43.209Z">
+<meta property="og:description" content="动态类型简介python中，类型在运行过程中自动决定，不是通过代码声明。">
+<meta property="og:updated_time" content="2017-12-05T11:56:21.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python网络爬虫（二）">
-<meta name="twitter:description" content="网站防爬虫1.审查来源2.robots协议作用：网站告知网络爬虫哪些页面可以抓取，哪些不行。">
+<meta name="twitter:title" content="python基本知识（六）">
+<meta name="twitter:description" content="动态类型简介python中，类型在运行过程中自动决定，不是通过代码声明。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>python网络爬虫（二） | Hexo</title>
+<title>python基本知识（六） | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -284,11 +284,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-python网络爬虫（二）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-python基本知识（六）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/11/28/python网络爬虫（二）/" class="article-date">
-      <time datetime="2017-11-28T11:13:59.000Z" itemprop="datePublished">2017-11-28</time>
+      <a href="/2017/12/05/python基本知识（六）/" class="article-date">
+      <time datetime="2017-12-05T09:47:28.000Z" itemprop="datePublished">2017-12-05</time>
 </a>
 
 
@@ -303,7 +303,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python网络爬虫（二）
+      python基本知识（六）
     </h1>
   
 
@@ -314,7 +314,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态类型/">动态类型</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -324,8 +324,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="网站防爬虫"><a href="#网站防爬虫" class="headerlink" title="网站防爬虫"></a>网站防爬虫</h2><h3 id="1-审查来源"><a href="#1-审查来源" class="headerlink" title="1.审查来源"></a>1.审查来源</h3><h3 id="2-robots协议"><a href="#2-robots协议" class="headerlink" title="2.robots协议"></a>2.robots协议</h3><p>作用：网站告知网络爬虫哪些页面可以抓取，哪些不行。<br><a id="more"></a><br>网站根目录robots.txt文件。<br>eg：<a href="https://www.jd.com/robot.txt京东的robots协议" target="_blank" rel="noopener">https://www.jd.com/robot.txt京东的robots协议</a><br>*：所有，/：根目录</p>
-<p><em>可以不遵守：类人行为可以不遵守</em></p>
+        <h2 id="动态类型简介"><a href="#动态类型简介" class="headerlink" title="动态类型简介"></a>动态类型简介</h2><p>python中，类型在运行过程中自动决定，不是通过代码声明。<br><a id="more"></a><br>变量在赋值时才创建，可以引用任何对象，并在引用之前赋值。eg：a=3创建一个对象代表值3，创建一个变量a，将变量与新的对象3相连接。类型属于对象，不是变量名。</p>
+<h3 id="回收"><a href="#回收" class="headerlink" title="回收"></a>回收</h3><p>python在每个对象中保持了一个计数器，计数器记录了当前指向该对象的引用的数目。一旦这个计数器被设置为0，这个对象的内存空间自动回收。</p>
+<h3 id="共享引用"><a href="#共享引用" class="headerlink" title="共享引用"></a>共享引用</h3><p>多个变量名引用同一个对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=3</span><br><span class="line">b=3</span><br><span class="line">a=5    ##此时b仍为3</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=3</span><br><span class="line">b=a</span><br><span class="line">a=a+2  ##此时b仍为3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">L1=[1.2.3]</span><br><span class="line">L2=L1</span><br><span class="line">L1=2   ##此时L2不变</span><br><span class="line">L1[0]=24  ##此时L2改变，若想让L2不变，办法：1.内置列表函数 2.标准库的copy模块 3.从头到尾的分片</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">L2=L1.copy()</span><br><span class="line">L2=L1[:]</span><br></pre></td></tr></table></figure>
+<h3 id="共享引用与相等"><a href="#共享引用与相等" class="headerlink" title="共享引用与相等"></a>共享引用与相等</h3><p>“==”两个被引用对象是否有相同的值，”is”检查对象的同一性，只针对列表等较复杂情况，小的数字例如int型字符串型的被缓存并复用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">sys.getrefcount(1)        ##返回1对象的引用次数</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -334,13 +339,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></p>
+        <p><span>Title:</span><a href="/2017/12/05/python基本知识（六）/">python基本知识（六）</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">聪聪无敌</a></p>
-        <p><span>Created:</span>2017-11-28, 19:13:59</p>
-        <p><span>Updated:</span>2017-11-30, 21:11:43</p>
+        <p><span>Created:</span>2017-12-05, 17:47:28</p>
+        <p><span>Updated:</span>2017-12-05, 19:56:21</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/11/28/python网络爬虫（二）/" title="python网络爬虫（二）">http://yoursite.com/2017/11/28/python网络爬虫（二）/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/11/28/python网络爬虫（二）/　　By 聪聪无敌" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/12/05/python基本知识（六）/" title="python基本知识（六）">http://yoursite.com/2017/12/05/python基本知识（六）/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/12/05/python基本知识（六）/　　By 聪聪无敌" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,16 +357,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/11/29/软件工程复习（一）/">
-                    软件工程复习（一）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/11/27/python网络爬虫（一）/">
-                    python网络爬虫（一）
+                <a href="/2017/12/04/python基本知识（五）/">
+                    python基本知识（五）
                 </a>
             </div>
         
@@ -373,7 +372,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#网站防爬虫"><span class="toc-number">1.</span> <span class="toc-text">网站防爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-审查来源"><span class="toc-number">1.1.</span> <span class="toc-text">1.审查来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-robots协议"><span class="toc-number">1.2.</span> <span class="toc-text">2.robots协议</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#动态类型简介"><span class="toc-number">1.</span> <span class="toc-text">动态类型简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#回收"><span class="toc-number">1.1.</span> <span class="toc-text">回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享引用"><span class="toc-number">1.2.</span> <span class="toc-text">共享引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享引用与相等"><span class="toc-number">1.3.</span> <span class="toc-text">共享引用与相等</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -409,7 +408,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"python网络爬虫（二）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"python基本知识（六）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -429,15 +428,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/11/29/软件工程复习（一）/" title="Pre: 软件工程复习（一）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/11/27/python网络爬虫（一）/" title="Next: python网络爬虫（一）">
+            <a href="/2017/12/04/python基本知识（五）/" title="Next: python基本知识（五）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
