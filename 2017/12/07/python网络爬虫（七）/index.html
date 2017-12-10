@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="字典字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。">
-<meta name="keywords" content="python,字典">
+<meta name="description" content="信息标记HTML是WWW的学习组织方式。通过预定义的&amp;lt;&amp;gt;……&amp;lt;/&amp;gt;标签形式组织不同类型的信息。">
+<meta name="keywords" content="python,BeautifulSoup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python基本知识（三）">
-<meta property="og:url" content="http://yoursite.com/2017/12/03/python基本知识（三）/index.html">
+<meta property="og:title" content="python网络爬虫（七）">
+<meta property="og:url" content="http://yoursite.com/2017/12/07/python网络爬虫（七）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="字典字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。">
-<meta property="og:updated_time" content="2017-12-03T11:40:17.076Z">
+<meta property="og:description" content="信息标记HTML是WWW的学习组织方式。通过预定义的&amp;lt;&amp;gt;……&amp;lt;/&amp;gt;标签形式组织不同类型的信息。">
+<meta property="og:updated_time" content="2017-12-09T16:20:47.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python基本知识（三）">
-<meta name="twitter:description" content="字典字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。">
+<meta name="twitter:title" content="python网络爬虫（七）">
+<meta name="twitter:description" content="信息标记HTML是WWW的学习组织方式。通过预定义的&amp;lt;&amp;gt;……&amp;lt;/&amp;gt;标签形式组织不同类型的信息。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>python基本知识（三） | Hexo</title>
+<title>python网络爬虫（七） | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -282,11 +282,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="w-python基本知识（三）" class="article article-type-w" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-python网络爬虫（七）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/03/python基本知识（三）/" class="article-date">
-      <time datetime="2017-12-03T05:45:02.000Z" itemprop="datePublished">2017-12-03</time>
+      <a href="/2017/12/07/python网络爬虫（七）/" class="article-date">
+      <time datetime="2017-12-07T12:02:37.000Z" itemprop="datePublished">2017-12-07</time>
 </a>
 
 
@@ -301,7 +301,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python基本知识（三）
+      python网络爬虫（七）
     </h1>
   
 
@@ -312,7 +312,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字典/">字典</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BeautifulSoup/">BeautifulSoup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,22 +322,54 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。<br><a id="more"></a></p>
-<h3 id="映射操作"><a href="#映射操作" class="headerlink" title="映射操作"></a>映射操作</h3><p>作为常量编写时，字典编写在大括号中，并包含一系列的“键：值”对。eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D=&#123;&apos;food&apos;:&apos;apply&apos;,&apos;quantity&apos;:4,&apos;color&apos;:&apos;pink&apos;&#125;</span><br><span class="line">D[&apos;food&apos;]</span><br><span class="line">D[&apos;quantity&apos;]+=1</span><br><span class="line">D</span><br></pre></td></tr></table></figure></p>
-<p>第二种创建字典方法。开始一个空的字典，然后每次以一个键来填写它。对一个新的字典的键赋值会创建该键：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">D=&#123;&#125;</span><br><span class="line">D[&apos;name&apos;]=&apos;Bob&apos;</span><br><span class="line">D[&apos;job&apos;]=&apos;dev&apos;</span><br><span class="line">D[&apos;age&apos;]=40</span><br><span class="line">D</span><br><span class="line">print(D[&apos;name&apos;])</span><br></pre></td></tr></table></figure></p>
-<p>在这里，我们实际上使用字典中的键。在另一个应用中，字典也可以用来执行搜索。<strong>通过键索引一个字典往往是python中编写搜索的最快方法</strong></p>
-<h3 id="重访嵌套"><a href="#重访嵌套" class="headerlink" title="重访嵌套"></a>重访嵌套</h3><p>上述例子复杂一下，需要记录名（first name）和姓（last name），且有多个工作头衔。这产生了另一个python对象嵌套的应用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rec=&#123;&apos;name&apos;:&#123;&apos;first&apos;:&apos;Bob&apos;,&apos;last&apos;:&apos;Smith&apos;&#125;,</span><br><span class="line">             &apos;job&apos;:[&apos;dev&apos;,&apos;mgr&apos;],</span><br><span class="line">             &apos;age&apos;:40.5&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在顶层使用了三个键的字典（“name”，“job”，“age”），值的情况变得复杂得多：一个嵌套的字典作为name的值，支持多个部分，一个嵌套的列表作为job的值从而支持多个角色和未来的扩展。能够获取这个结构的组件，就像之前在矩阵中所做的那样，但这次索引的是字典的键。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rec[&apos;name&apos;]</span><br><span class="line">rec[&apos;name&apos;][&apos;last&apos;]</span><br><span class="line">rec[&apos;job&apos;]</span><br><span class="line">rec[&apos;job&apos;][-1]</span><br><span class="line">rec[&apos;job&apos;].append(&apos;janitor&apos;)</span><br></pre></td></tr></table></figure></p>
-<p>最后一行是扩展嵌入job列表的。</p>
-<h3 id="键的排序：for循环"><a href="#键的排序：for循环" class="headerlink" title="键的排序：for循环"></a>键的排序：for循环</h3><p>字典不是序列，不包括任何可靠的从左至右的顺序。所以，建立一个字典并将它打印出来，它的键也许会以与我们输入时不同的顺序出现。<br>当在一个字典的元素中，需要强调某种顺序时，通过字典的keys方法收集一个键的列表，使用列表的sort方法进行排序，然后用python的for循环逐个进行显示结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D=&#123;&apos;a&apos;:1,&apos;b&apos;:2,&apos;c&apos;:3&#125;</span><br><span class="line">D</span><br><span class="line">ks=list(D.keys())</span><br><span class="line">ks</span><br><span class="line">ks.sort()</span><br><span class="line">for key in ks:</span><br><span class="line">     print(key,&quot;:&quot;,D[key])</span><br></pre></td></tr></table></figure></p>
-<p>也可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for key in sorted(D):</span><br><span class="line">     print(key,&quot;:&quot;,D[key])</span><br></pre></td></tr></table></figure></p>
-<h3 id="迭代优化"><a href="#迭代优化" class="headerlink" title="迭代优化"></a>迭代优化</h3><p>iter(object[, sentinel])函数：<a href="http://www.runoob.com/python/python-func-iter.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-func-iter.html</a><br>next(iterator[, default])函数：<a href="http://www.runoob.com/python/python-func-next.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-func-next.html</a></p>
-<h3 id="不存在的键：if测试"><a href="#不存在的键：if测试" class="headerlink" title="不存在的键：if测试"></a>不存在的键：if测试</h3><p>in关系表达式查询字典中的一个键是否存在<code>&#39;f&#39; in D</code>，通过if语句对结果进行处理。<br><em>其他方法：</em></p>
-<ul>
-<li>get方法：带有一个默认值的条件索引。eg：<code>value=D.get(&#39;x&#39;,0)</code>如果不存在，value为0</li>
-<li>try语句</li>
-<li>if/else表达式</li>
+        <h2 id="信息标记"><a href="#信息标记" class="headerlink" title="信息标记"></a>信息标记</h2><p>HTML是WWW的学习组织方式。通过预定义的&lt;&gt;……&lt;/&gt;标签形式组织不同类型的信息。<br><a id="more"></a></p>
+<h3 id="信息标记三种形式"><a href="#信息标记三种形式" class="headerlink" title="信息标记三种形式"></a>信息标记三种形式</h3><ul>
+<li>XML &lt;&gt;..&lt;/&gt;</li>
+<li>JSON 有类型key:value  更适合程序直接对他进行使用</li>
+<li>YAML 无类型key:value  适合人类的理解<br>XML:</li>
+<li><code>&lt;img src=“china.jpg&quot; size=&quot;10&quot;&gt;...&lt; /img&gt;</code><br>img：名称   src……”10”：属性</li>
+<li>空元素的缩写形式：<code>&lt;img src=&quot;china.jpg&quot; size=&quot;10&quot; /&gt;</code></li>
+<li>注释书写形式<code>&lt;!-- This is a comment, very useful --&gt;</code><br>综上：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;name&gt;……&lt;/name&gt;         有内容</span><br><span class="line">&lt;name /&gt;                内容为空</span><br><span class="line">&lt;!--  --&gt;               注释</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>JSON：有类型的键值对key:value构建的信息表达形式</p>
+<ul>
+<li><code>&quot;name&quot;:&quot;北京理工大学&quot;</code> “”：类型  “name”：键 key  “北京理工大学”：值 value</li>
+<li><code>&quot;name&quot;:[&quot;北京理工大学&quot;，“延安自然科学院”]</code>多值用[,]组织</li>
+<li>键值对嵌套用{,}<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;name&quot;:&#123;</span><br><span class="line">&quot;newName&quot;:&quot;北京理工大学&quot;</span><br><span class="line">&quot;oldname&quot;:&quot;延安自然科学院&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>综上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;key&quot;:&quot;value&quot;</span><br><span class="line">&quot;key&quot;:[&quot;value1&quot;,&quot;value2&quot;]</span><br><span class="line">&quot;key&quot;:&#123;&quot;subkey&quot;:&quot;subvalue&quot;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>YAML:<br>无类型键值对 key:value</p>
+<ul>
+<li>仅字符串：<code>name:北京理工大学</code>name：键 北京理工大学:值</li>
+<li><p>缩进形式表达所属关系eg：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name:</span><br><span class="line">   newName:北京理工大学</span><br><span class="line">   oldName:延安自然科学院</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>减号表达并列关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name:</span><br><span class="line">-北京理工大学</span><br><span class="line">-延安自然科学院</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>| 表达这块数据 # 表示注释</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">text: |   #学校介绍</span><br><span class="line">北京理工大学……</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>综上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">key:value</span><br><span class="line">key:#Comment</span><br><span class="line">-value1</span><br><span class="line">-value2</span><br><span class="line">key:</span><br><span class="line">   subkey : subvalue</span><br></pre></td></tr></table></figure></p>
+<h2 id="信息提取方法"><a href="#信息提取方法" class="headerlink" title="信息提取方法"></a>信息提取方法</h2><p>从标记后的信息中提取所关注的内容。（标记，信息）</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>完整解析信息的标记形式，在提取关键信息。<br>XML JSON YAML需要标记解析器<br>优点：信息解析准确<br>缺点：提取过程繁琐，速度慢</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>无视标记形式，直接搜索关键信息。<br>搜索 对信息的文本查找函数即可<br>优点：提取过程简洁，速度较快<br>缺点：提取结果准确性与信息内容相关</p>
+<h3 id="融合方法"><a href="#融合方法" class="headerlink" title="融合方法"></a>融合方法</h3><p>结合形式解析与搜索方法，提取关键信息。<br>XML JSON YAML 搜索<br>需要标记解析器及文本查找函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">url=&quot;http://www.baidu.com&quot;</span><br><span class="line">r=requests.get(url)</span><br><span class="line">r.text=&quot;UTF-8&quot;</span><br><span class="line">demo=r.text</span><br><span class="line">soup=BeautifulSoup(demo,&quot;html.parser&quot;)</span><br><span class="line">for link in soup.find_all(&apos;a&apos;):</span><br><span class="line">      print(link.get(&apos;href&apos;))</span><br></pre></td></tr></table></figure>
+<h3 id="基于bs4库的HTML内容查找方法"><a href="#基于bs4库的HTML内容查找方法" class="headerlink" title="基于bs4库的HTML内容查找方法"></a>基于bs4库的HTML内容查找方法</h3><p>&lt;&gt;.find_all(name,attrs,recursive,string,**kwargs)返回一个列表类型，存储查找的结果。在soup的变量中查找相关信息。</p>
+<ul>
+<li>name：对标签名称的检索字符串</li>
+<li>attrs：对标签属性值的检索字符串，可标注属性检索</li>
+<li>recursive：是否对子孙全部检索，默认为TRUE</li>
+<li>string：&lt;&gt;……&lt;/&gt;中字符串区域的检索字符串<br>eg:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">soup.find_all([]&apos;a&apos;,&apos;b&apos;])</span><br><span class="line">for tag in soup.find_all(True):</span><br><span class="line">    print(tag.name)</span><br><span class="line"></span><br><span class="line">import re                      正则表达式库</span><br><span class="line">for tag in soup.find_all(re.compile(&apos;b&apos;)):      re.compile(&apos;b&apos;)以b开头的所有信息作为查找参数</span><br><span class="line">    print(tag.name)</span><br></pre></td></tr></table></figure>
+<p><code>soup.find_all(&#39;p&#39;,&#39;course&#39;)</code>查找p标签中包含course字符串的信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">soup.find_all(id=re.compile(&apos;link1&apos;))</span><br></pre></td></tr></table></figure></p>
+<p>包含link所有内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">soup.find_all(string=re.compile(&quot;百度&quot;))</span><br></pre></td></tr></table></figure></p>
+<p><strong>find_all()简写：</strong><br><strong>&lt; tag&gt;(..)等价于&lt; tag&gt;.find_all()</strong><br><strong>soup(..)等价于soup.find_all()</strong></p>
 
       
     </div>
@@ -346,13 +378,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/03/python基本知识（三）/">python基本知识（三）</a></p>
+        <p><span>本文标题:</span><a href="/2017/12/07/python网络爬虫（七）/">python网络爬虫（七）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">聪聪无敌</a></p>
-        <p><span>发布时间:</span>2017-12-03, 13:45:02</p>
-        <p><span>最后更新:</span>2017-12-03, 19:40:17</p>
+        <p><span>发布时间:</span>2017-12-07, 20:02:37</p>
+        <p><span>最后更新:</span>2017-12-10, 00:20:47</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/03/python基本知识（三）/" title="python基本知识（三）">http://yoursite.com/2017/12/03/python基本知识（三）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/03/python基本知识（三）/　　作者: 聪聪无敌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/07/python网络爬虫（七）/" title="python网络爬虫（七）">http://yoursite.com/2017/12/07/python网络爬虫（七）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/07/python网络爬虫（七）/　　作者: 聪聪无敌" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -365,15 +397,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/12/03/python基本知识（四）/">
-                    python基本知识（四）
+                <a href="/2017/12/10/python网络爬虫（八）/">
+                    python网络爬虫（八）
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/12/01/python基本知识（二）/">
-                    python基本知识（二）
+                <a href="/2017/12/06/python网络爬虫（六）/">
+                    python网络爬虫（六）
                 </a>
             </div>
         
@@ -385,7 +417,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字典"><span class="toc-number">1.</span> <span class="toc-text">字典</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#映射操作"><span class="toc-number">1.1.</span> <span class="toc-text">映射操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重访嵌套"><span class="toc-number">1.2.</span> <span class="toc-text">重访嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键的排序：for循环"><span class="toc-number">1.3.</span> <span class="toc-text">键的排序：for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代优化"><span class="toc-number">1.4.</span> <span class="toc-text">迭代优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不存在的键：if测试"><span class="toc-number">1.5.</span> <span class="toc-text">不存在的键：if测试</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信息标记"><span class="toc-number">1.</span> <span class="toc-text">信息标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#信息标记三种形式"><span class="toc-number">1.1.</span> <span class="toc-text">信息标记三种形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信息提取方法"><span class="toc-number">2.</span> <span class="toc-text">信息提取方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法一"><span class="toc-number">2.1.</span> <span class="toc-text">方法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方法二"><span class="toc-number">2.2.</span> <span class="toc-text">方法二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#融合方法"><span class="toc-number">2.3.</span> <span class="toc-text">融合方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于bs4库的HTML内容查找方法"><span class="toc-number">2.4.</span> <span class="toc-text">基于bs4库的HTML内容查找方法</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -421,7 +453,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"python基本知识（三）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"python网络爬虫（七）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,7 +473,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/03/python基本知识（四）/" title="上一篇: python基本知识（四）">
+            <a href="/2017/12/10/python网络爬虫（八）/" title="上一篇: python网络爬虫（八）">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -449,7 +481,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/12/01/python基本知识（二）/" title="下一篇: python基本知识（二）">
+            <a href="/2017/12/06/python网络爬虫（六）/" title="下一篇: python网络爬虫（六）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
