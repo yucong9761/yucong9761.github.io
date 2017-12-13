@@ -15,17 +15,12 @@
 
 
 
-<meta name="description" content="基于bs4的HTML内容遍历方法html基本格式中&amp;lt;&amp;gt;……&amp;lt;/&amp;gt;构成了所属关系，形成了标签的树形结构。标签树遍历：下行、上行、平行。">
-<meta name="keywords" content="python,爬虫,BeautifulSoup">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python网络爬虫（五）">
-<meta property="og:url" content="http://yoursite.com/2017/12/06/python网络爬虫（五）/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/tags/re（正则表达式）库/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="基于bs4的HTML内容遍历方法html基本格式中&amp;lt;&amp;gt;……&amp;lt;/&amp;gt;构成了所属关系，形成了标签的树形结构。标签树遍历：下行、上行、平行。">
-<meta property="og:updated_time" content="2017-12-06T12:36:23.320Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python网络爬虫（五）">
-<meta name="twitter:description" content="基于bs4的HTML内容遍历方法html基本格式中&amp;lt;&amp;gt;……&amp;lt;/&amp;gt;构成了所属关系，形成了标签的树形结构。标签树遍历：下行、上行、平行。">
+<meta name="twitter:title" content="Hexo">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +52,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>python网络爬虫（五） | Hexo</title>
+<title>Tag: re（正则表达式）库 | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,9 +62,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: true,
+        isPost: false,
         isArchive: false,
-        isTag: false,
+        isTag: true,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -282,179 +277,56 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-python网络爬虫（五）" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/2017/12/06/python网络爬虫（五）/" class="article-date">
-      <time datetime="2017-12-06T12:00:54.000Z" itemprop="datePublished">2017-12-06</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/2017/12/10/python网络爬虫（八）/" class="archive-article-date">
+      <time datetime="2017-12-10T07:19:56.000Z" itemprop="datePublished">12-10</time>
 </a>
 
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      python网络爬虫（五）
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/12/10/python网络爬虫（八）/">python网络爬虫（八）</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BeautifulSoup/">BeautifulSoup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <h2 id="基于bs4的HTML内容遍历方法"><a href="#基于bs4的HTML内容遍历方法" class="headerlink" title="基于bs4的HTML内容遍历方法"></a>基于bs4的HTML内容遍历方法</h2><p>html基本格式中&lt;&gt;……&lt;/&gt;构成了所属关系，形成了标签的树形结构。<br>标签树遍历：下行、上行、平行。<br><a id="more"></a></p>
-<h3 id="标签树下行遍历"><a href="#标签树下行遍历" class="headerlink" title="标签树下行遍历"></a>标签树下行遍历</h3><p>属性：.contents子节点列表，将<tag>所有儿子节点存入列表。<br>.children子节点迭代类型，与.content类似，用于循环遍历儿子节点。<br>.descendants子孙节点迭代类型，包含所有子孙节点，用于循环遍历。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">r=requests.get(&quot;http://www.baidu.com&quot;)</span><br><span class="line">demo=r.text</span><br><span class="line">soup=BeautifulSoup(demo,&quot;html.parser&quot;)</span><br></pre></td></tr></table></figure></tag></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for child in soup.body.children:</span><br><span class="line">    print(child)                   ##遍历儿子节点</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for child in soup.body.descendants:</span><br><span class="line">    print(child)                   ##遍历子孙节点</span><br></pre></td></tr></table></figure>
-<h3 id="标签树上行遍历"><a href="#标签树上行遍历" class="headerlink" title="标签树上行遍历"></a>标签树上行遍历</h3><p>属性：.parent节点的父亲标签<br>.parents节点先辈标签的迭代类型，用于循环遍历先辈节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">soup.title.parent</span><br><span class="line">soup.html</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for parent in soup.a.parents:</span><br><span class="line">    if parent is None:</span><br><span class="line">       print(parent)</span><br><span class="line">    else:</span><br><span class="line">       print(parent.name)</span><br></pre></td></tr></table></figure>
-<h3 id="标签数平行遍历"><a href="#标签数平行遍历" class="headerlink" title="标签数平行遍历"></a>标签数平行遍历</h3><p>属性：.next_sibling返回按照HTML文本顺序的下一个平行节点标签<br>.previous_sibling返回按照HTML文本顺序的上一个平行节点标签<br>.next_siblings迭代类型，返回按照HTML文本顺序的后续所有平行节点标签<br>.previous_siblings迭代类型，返回按照HTML文本顺序的前序所有平行节点标签<br><strong>平行遍历发生在同一个父节点下的各节点间</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for sibling in soup.a.next_siblings:</span><br><span class="line">    print(sibling)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for sibling in soup.a.previous_siblings:</span><br><span class="line">    print(sibling)</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/06/python网络爬虫（五）/">python网络爬虫（五）</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Sakura</a></p>
-        <p><span>发布时间:</span>2017-12-06, 20:00:54</p>
-        <p><span>最后更新:</span>2017-12-06, 20:36:23</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/06/python网络爬虫（五）/" title="python网络爬虫（五）">http://yoursite.com/2017/12/06/python网络爬虫（五）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/06/python网络爬虫（五）/　　作者: Sakura" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-        </p>
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/re（正则表达式）库/">re（正则表达式）库</a></li></ul>
     </div>
 
-
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/12/06/python网络爬虫（六）/">
-                    python网络爬虫（六）
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/12/05/python基本知识（七）/">
-                    python基本知识（七）
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基于bs4的HTML内容遍历方法"><span class="toc-number">1.</span> <span class="toc-text">基于bs4的HTML内容遍历方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#标签树下行遍历"><span class="toc-number">1.1.</span> <span class="toc-text">标签树下行遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签树上行遍历"><span class="toc-number">1.2.</span> <span class="toc-text">标签树上行遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签数平行遍历"><span class="toc-number">1.3.</span> <span class="toc-text">标签数平行遍历</span></a></li></ol></li></ol>
-        
-    </div>
-    <style>
-        .left-col .switch-btn,
-        .left-col .switch-area {
-            display: none;
-        }
-        .toc-level-4 i,
-        .toc-level-4 ol {
-            display: none !important;
-        }
-    </style>
-
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-    <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
-    </script>
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
-            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
-            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
-            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
-            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
-            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"python网络爬虫（五）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2017/12/06/python网络爬虫（六）/" title="上一篇: python网络爬虫（六）">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/2017/12/05/python基本知识（七）/" title="下一篇: python基本知识（七）">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/vim（一）/">vim（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/10/python网络爬虫（八）/">python网络爬虫（八）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/python网络爬虫（七）/">python网络爬虫（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（六）/">python网络爬虫（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（五）/">python网络爬虫（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（七）/">python基本知识（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（六）/">python基本知识（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/python基本知识（五）/">python基本知识（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（四）/">python基本知识（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（三）/">python基本知识（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/python基本知识（二）/">python基本知识（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/30/python基本知识（一）/">python基本知识（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（四）/">python网络爬虫（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（三）/">python网络爬虫（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/软件工程复习（一）/">软件工程复习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/python网络爬虫（一）/">python网络爬虫（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/hello-world/">Hello World</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">
