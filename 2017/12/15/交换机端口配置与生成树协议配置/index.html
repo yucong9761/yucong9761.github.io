@@ -15,16 +15,17 @@
 
 
 
-<meta name="description" content="目前仅仅是一枚菜鸟，需要加油喔ヾ(◍°∇°◍)ﾉﾞ">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="交换机端口配置与生成树协议配置">
+<meta name="keywords" content="网络综合实验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="交换机端口配置与生成树协议配置">
+<meta property="og:url" content="http://yoursite.com/2017/12/15/交换机端口配置与生成树协议配置/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="目前仅仅是一枚菜鸟，需要加油喔ヾ(◍°∇°◍)ﾉﾞ">
-<meta property="og:updated_time" content="2017-11-26T05:55:20.508Z">
+<meta property="og:description" content="交换机端口配置与生成树协议配置">
+<meta property="og:updated_time" content="2017-12-15T11:57:49.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="目前仅仅是一枚菜鸟，需要加油喔ヾ(◍°∇°◍)ﾉﾞ">
+<meta name="twitter:title" content="交换机端口配置与生成树协议配置">
+<meta name="twitter:description" content="交换机端口配置与生成树协议配置">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>关于我 | Hexo</title>
+<title>交换机端口配置与生成树协议配置 | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,7 +67,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -281,11 +282,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-交换机端口配置与生成树协议配置" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-      <time datetime="2017-11-26T05:55:20.508Z" itemprop="datePublished">2017-11-26</time>
+      <a href="/2017/12/15/交换机端口配置与生成树协议配置/" class="article-date">
+      <time datetime="2017-12-15T08:47:26.000Z" itemprop="datePublished">2017-12-15</time>
 </a>
 
 
@@ -300,7 +301,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      关于我
+      交换机端口配置与生成树协议配置
     </h1>
   
 
@@ -310,6 +311,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络综合实验/">网络综合实验</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -317,26 +322,55 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-          
-        <p>目前仅仅是一枚菜鸟，需要加油喔ヾ(◍°∇°◍)ﾉﾞ</p>
+        <h3 id="交换机端口配置与生成树协议配置"><a href="#交换机端口配置与生成树协议配置" class="headerlink" title="交换机端口配置与生成树协议配置"></a>交换机端口配置与生成树协议配置</h3><a id="more"></a>
+<h4 id="交换机端口配置"><a href="#交换机端口配置" class="headerlink" title="交换机端口配置"></a>交换机端口配置</h4><ul>
+<li>端口速率配置命令<code>[Quidway-Ethernet0/1] speed  { 10 | 100 | 1000 | auto }</code></li>
+<li>端口工作模式配置命令<code>[Quidway-Ethernet0/1] duplex { full | half | auto}</code></li>
+<li>端口类型配置命令<code>[Quidway-Ethernet0/1] mdi  { normal | cross | auto }</code></li>
+<li><p>流量控制配置命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] flow-control</span><br><span class="line">[Quidway-Ethernet0/1] undo flow-control</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>端口聚合配置<br>参加聚合的端口必须工作在全双工方式下并且速率相同</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] duplex full</span><br><span class="line">[Quidway-Ethernet0/1] speed 100</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置端口聚合<br>S3900系列</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] link-aggregation group agg-id mode &#123; manual | static &#125;</span><br><span class="line">[Quidway-Ethernet1/0/1] port link-aggregation group agg-id</span><br><span class="line">agg-id：聚合组ID，S39系列取值范围为1-416</span><br><span class="line">manual：手工聚合组， static：静态聚合组。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>S3610系列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[h3c]interface bridge-aggregation interface-number</span><br><span class="line">[Quidway-Ethernet1/0/1] port link-aggregation group agg-id</span><br><span class="line">interface-number ：聚合端口， S36系列取值范围为1-14</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>清除端口聚合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] undo link-aggregation &#123; ethernet master_port_num | all &#125;      （S3500交换机）</span><br><span class="line">[Quidway] undo link-aggregation group agg-id                    （S3900或S3610交换机）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示端口聚合的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] display link-aggregation [ethernet master_port_num]   （S3500交换机）</span><br><span class="line">[Quidway] display link-aggregation summary                      （S3900或S3610交换机）</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="生成树协议"><a href="#生成树协议" class="headerlink" title="生成树协议"></a>生成树协议</h4><ul>
+<li><p>开启/关闭设备或端口上的RSTP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stp &#123; enable | disable &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>恢复设备的RSTP 为缺省状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">undo stp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设定网桥的优先级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] stp priority bridge-priority  bridge-priority用来标识bridge优先级，不连续，范围0~61440，步长4096，缺省情况下默认32768</span><br><span class="line">[Quidway] undo stp priority    恢复为缺省值</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设定端口的优先级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] stp port priority port-priority  port-priority:用来标识所设定的优先级，该值不连续，范围0~240，步长16，缺省时默认128</span><br><span class="line">[Quidway-Ethernet0/1] undo stp port priority  取消</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>改变端口开销的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] stp cost cost  cost范围1~200000，用来标识所设定路径开销值</span><br><span class="line">[Quidway-Ethernet0/1] undo stp cost  取消</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设定端口的Forward Delay</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] stp timer forward-delay centiseconds  centiseconds: 厘秒，缺省为1500</span><br><span class="line">[Quidway] undo stp timer forward-delay</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示生成树协议信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[任意视图] display stp  [ interface interface_list ]</span><br><span class="line">interface interface_list：以太网端口列表，表示多个以太网端口</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>显示设备上以太网端口Ethernet0/1 的RSTP信息。</p>
+<p><quidway> display stp interface Ethernet0/1</quidway></p>
 
       
     </div>
@@ -344,10 +378,59 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/12/15/交换机端口配置与生成树协议配置/">交换机端口配置与生成树协议配置</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">聪聪好纠结</a></p>
+        <p><span>发布时间:</span>2017-12-15, 16:47:26</p>
+        <p><span>最后更新:</span>2017-12-15, 19:57:49</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/12/15/交换机端口配置与生成树协议配置/" title="交换机端口配置与生成树协议配置">http://yoursite.com/2017/12/15/交换机端口配置与生成树协议配置/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/15/交换机端口配置与生成树协议配置/　　作者: 聪聪好纠结" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/12/14/登入交换机和COMWARE基本使用/">
+                    登入交换机和COMWARE基本使用
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#交换机端口配置与生成树协议配置"><span class="toc-number">1.</span> <span class="toc-text">交换机端口配置与生成树协议配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#交换机端口配置"><span class="toc-number">1.1.</span> <span class="toc-text">交换机端口配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生成树协议"><span class="toc-number">1.2.</span> <span class="toc-text">生成树协议</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-4 i,
+        .toc-level-4 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
 
@@ -365,7 +448,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"关于我　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"交换机端口配置与生成树协议配置　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -380,6 +463,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/12/14/登入交换机和COMWARE基本使用/" title="下一篇: 登入交换机和COMWARE基本使用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/15/交换机端口配置与生成树协议配置/">交换机端口配置与生成树协议配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/登入交换机和COMWARE基本使用/">登入交换机和COMWARE基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/vim（一）/">vim（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/10/python网络爬虫（八）/">python网络爬虫（八）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/python网络爬虫（七）/">python网络爬虫（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（六）/">python网络爬虫（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（五）/">python网络爬虫（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（七）/">python基本知识（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（六）/">python基本知识（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/python基本知识（五）/">python基本知识（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（四）/">python基本知识（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（三）/">python基本知识（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/python基本知识（二）/">python基本知识（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/30/python基本知识（一）/">python基本知识（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（四）/">python网络爬虫（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（三）/">python网络爬虫（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/软件工程复习（一）/">软件工程复习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/python网络爬虫（一）/">python网络爬虫（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/hello-world/">Hello World</a></li></ul>
 
 
 
