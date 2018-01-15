@@ -313,287 +313,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong>注：使用华为HCL来进行模拟实验</strong></p>
+              <p><strong>注：使用华为HCL来进行模拟实验</strong></p>
 <h3 id="登陆交换机与COMWARE基本使用"><a href="#登陆交换机与COMWARE基本使用" class="headerlink" title="登陆交换机与COMWARE基本使用"></a>登陆交换机与COMWARE基本使用</h3><ul>
-<li><p>配置交换机的ip地址和子网掩码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;H3C&gt; sys</span><br><span class="line">[H3C] interface vlan-interface 1</span><br><span class="line">[H3C-vlan-interface1] ip address 192.168.0.2 255.255.255.0</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置用户远程登录（模式）口令和权限</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[H3C] telnet server enable</span><br><span class="line">[H3C] line vty 0 63</span><br><span class="line">[H3C-line-vty0-63] authentication-mode password</span><br><span class="line">[H3C-line-vty0-4] set authentication password simple 123456</span><br><span class="line">[H3C-line-vty0-4] user-role level-15</span><br></pre></td></tr></table></figure>
+<li>配置交换机的ip地址和子网掩码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;H3C&gt; sys</span><br><span class="line">[H3C] interface vlan-interface 1</span><br><span class="line">[H3C-vlan-interface1] ip address 192.168.0.2 255.255.255.0</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><strong>注：PC机的IP地址配置为与交换机的IP地址在同一网段内</strong></p>
-<ul>
-<li><p>交换机端口视图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">interface GigabitEthernet 1/0/1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>VLAN接口视图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">interface vlan-interface 1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>常用命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[任意视图] display current-configuration：显示当前生效的（即RAM中的）交换机的配置参数</span><br><span class="line">[任意视图] display saved-configuration：显示Flash中保存的交换机的配置参数 （需先执行save命令并重启交换机）</span><br><span class="line">[用户视图] save：将当前生效的配置参数写入Flash中</span><br><span class="line">[用户视图] reset saved-configuration：删除Flash中的配置文件，其结果是将所有配置还原为缺省配置</span><br><span class="line">[用户视图] reboot：重新启动交换机</span><br><span class="line">[任意视图] display version：显示Comware的版本信息</span><br><span class="line">[任意视图]  display interface GigabitEthernet 1/0/1 ：显示交换机的某个端口的配置信息</span><br><span class="line">[系统视图] sysname &lt;name&gt;：修改交换机的名字</span><br><span class="line">[任意视图] quit：退出当前视图</span><br><span class="line">[任意视图] return：返回到用户视图</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="交换机端口配置与生成树协议配置"><a href="#交换机端口配置与生成树协议配置" class="headerlink" title="交换机端口配置与生成树协议配置"></a>交换机端口配置与生成树协议配置</h3><ul>
-<li><p>端口工作模式配置命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] duplex &#123; full | half | auto&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>端口类型配置命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] mdi  &#123; normal | cross | auto &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>流量控制配置命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] flow-control</span><br><span class="line">[Quidway-Ethernet0/1] undo flow-control</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>配置端口聚合（S2008或S3526）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] link-aggregation ethernet port_num1 to ethernet port_num2  &#123; ingress | both &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="交换机VLAN配置"><a href="#交换机VLAN配置" class="headerlink" title="交换机VLAN配置"></a>交换机VLAN配置</h3><ul>
-<li><p>创建VLAN并进入VLAN视图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] vlan vlan_id</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除VLAN</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] undo vlan vlan_id</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: [Quidway]vlan 1</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>向VLAN中添加交换机端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-vlan1] port port_num [ to port_num ] &amp; &lt; 1-10 &gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>从VLAN中删除交换机端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-vlan1] undo port port_num [ to port_num ] &amp; &lt;1-10&gt;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: [Quidway-vlan1] port ethernet 0/1 to ethernet 0/12</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>将端口添加到VLAN:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] port access vlan vlan-id</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>将端口从VLAN中删除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Ethernet0/1] undo port access vlan vlan-id</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eg: [Quidway-Ethernet0/1] port access vlan 1</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>设定IP地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-vlan-inferface1] ip  address  ip-addr  netmask</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>取消IP地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-vlan-inferface1] undo  ip  address</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">举例: [Quidway-vlan-inferface1] ip  address  210.30.103.254 255.255.255.0</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>添加一条静态路由表项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] ip  route-static  ip-address  &#123; mask | mask-length &#125;  &#123; interface-type interface-number | gateway-address &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>删除一条静态路由表项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] undo  ip  route-static  ip-address  &#123; mask | mask-length &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">举例</span><br><span class="line"> [Quidway] ip route-static  210.30.104.0（目的）  24  210.30.104.254（下一跳）</span><br><span class="line"> [Quidway] ip route-static   0.0.0.0    0   192.168.1.1  //缺省路由</span><br></pre></td></tr></table></figure>
-<h3 id="登录路由器与路由协议配置"><a href="#登录路由器与路由协议配置" class="headerlink" title="登录路由器与路由协议配置"></a>登录路由器与路由协议配置</h3><ul>
-<li><p>Telnet方式登录路由器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] local-user user-name service-type administrator password simple  password                  // 适用于AR18-12</span><br><span class="line">例如：[Quidway] local-user sws service-type administrator password simple  123456</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动RIP并进入RIP配置视图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] rip</span><br><span class="line">[Quidway-rip]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关闭RIP</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] undo rip</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>注：缺省情况下，路由器不启动RIP</strong></p>
-<ul>
-<li><p>在路由器所连接的一个网段启动/关闭RIP</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-rip] [undo] network network-address</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动/关闭水平分割</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Serial0] [undo] rip split-horizon</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动/关闭RIP-2的路由聚合功能</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-rip] [undo] summary</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>引入/取消其它协议的路由</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-rip] [undo] import-route protocol</span><br><span class="line">protocol: Direct, Static, OSPF, BGP, IS-IS</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="广域网协议介绍与配置"><a href="#广域网协议介绍与配置" class="headerlink" title="广域网协议介绍与配置"></a>广域网协议介绍与配置</h3><h4 id="PPP"><a href="#PPP" class="headerlink" title="PPP"></a>PPP</h4><ul>
-<li><p>配置接口封装的链路层协议为PPP </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Serial0] link-protocol ppp</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>PAP验证<br>验证方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Serial0] ppp authentication-mode pap</span><br><span class="line">[Quidway] local-user username</span><br><span class="line">[Quidway-luser] service-type ppp </span><br><span class="line">[Quidway-luser] password simple password</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>被验证方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Serial0] ppp pap local-user username password simple password</span><br></pre></td></tr></table></figure></p>
-<p>CHAP验证<br>验证方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[RA-Serial0] ppp authentication-mode chap</span><br><span class="line">[RA-Serial0] ppp chap user user-a</span><br><span class="line">[RA] local-user user-b</span><br><span class="line">[RA-userb] service-type ppp </span><br><span class="line">[RA-userb] password simple password</span><br></pre></td></tr></table></figure></p>
-<p>被验证方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[RB-Serial0] ppp chap user user-b</span><br><span class="line">[RB] local-user user-a</span><br><span class="line">[RB-usera] service-type ppp </span><br><span class="line">[RB-usera] password simple password</span><br></pre></td></tr></table></figure></p>
-<h3 id="防火墙配置与NAT配置"><a href="#防火墙配置与NAT配置" class="headerlink" title="防火墙配置与NAT配置"></a>防火墙配置与NAT配置</h3><ul>
-<li><p>启动防火墙</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] firewall enable</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>禁止防火墙</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] undo firewall enable</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在接口上应用ACL的命令为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-Serial0] firewall  packet-filter  acl-number &#123; inbound | outbound &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-acl-2000] rule  normal  permit  source  192.168.1.0  0.0.0.255</span><br></pre></td></tr></table></figure>
-<p><strong>例子</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">打开防火墙功能。</span><br><span class="line">[Router] firewall enable</span><br><span class="line"></span><br><span class="line">设置防火墙缺省过滤方式为允许包通过。</span><br><span class="line">[Router] firewall default permit</span><br><span class="line"></span><br><span class="line">配置Ethernet0入方向访问规则禁止所有包通过。</span><br><span class="line">[Router] acl adv 3001 match-order auto</span><br><span class="line">[Router-acl-adv-3001] rule deny ip source any destination any</span><br><span class="line"></span><br><span class="line">允许内部特定PC访问外部网，允许内部服务器与外部特定PC通讯。</span><br><span class="line">[Router-acl-adv-3001] rule permit ip source 129.38.1.4 0 destination any</span><br><span class="line">[Router-acl-adv-3001] rule permit ip source 129.38.1.1 0 destination 202.39.2.3 0</span><br><span class="line">[Router-acl-adv-3001] rule permit ip source 129.38.1.2 0 destination 202.39.2.3 0</span><br><span class="line">[Router-acl-adv-3001] rule permit ip source 129.38.1.3 0 destination 202.39.2.3 0</span><br><span class="line"></span><br><span class="line">配置Serial0入方向访问规则禁止所有包通过。 </span><br><span class="line">[Router] acl adv 3002 match-order auto</span><br><span class="line">[Router-acl-adv-3002] rule deny ip source any destination any</span><br><span class="line"></span><br><span class="line">允许外部网与内部特定PC通讯。</span><br><span class="line">[Router-acl-adv-3002] rule permit ip source any destination 129.38.1.4 0</span><br><span class="line"></span><br><span class="line">允许外部特定PC访问内部服务器。</span><br><span class="line">[Router-acl-adv-3002] rule permit ip source 202.39.2.3 0 destination 129.38.1.1 0</span><br><span class="line">[Router-acl-adv-3002] rule permit ip source 202.39.2.3 0 destination 129.38.1.2 0</span><br><span class="line">[Router-acl-adv-3002] rule permit ip source 202.39.2.3 0 destination 129.38.1.3 0</span><br><span class="line"></span><br><span class="line">将规则3001 作用于从接口Ethernet0 进入的包。</span><br><span class="line">[Router-Ethernet0] firewall packet-filter 3001 inbound</span><br><span class="line"></span><br><span class="line">将规则3002 作用于从接口Serial0 进入的包。</span><br><span class="line">[Router-Serial0] firewall packet-filter 3002 inbound</span><br></pre></td></tr></table></figure>
-<h3 id="路由综合实验与故障诊断"><a href="#路由综合实验与故障诊断" class="headerlink" title="路由综合实验与故障诊断"></a>路由综合实验与故障诊断</h3><h4 id="OSPF配置"><a href="#OSPF配置" class="headerlink" title="OSPF配置"></a>OSPF配置</h4><ul>
-<li><p>配置路由器的ID:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] router id router-id</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>取消路由器的ID:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] undo router id</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动/关闭OSPF</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Quidway] [undo] ospf</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建/删除区域</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-ospf] [undo] area area-id</span><br><span class="line">例如：[Quidway-ospf] area 0</span><br><span class="line">           [Quidway-ospf-area0]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在区域中指定/取消网段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-ospf-area0] [undo] network ip-addr mask</span><br><span class="line">ip-addr：路由器接口IP</span><br><span class="line">mask: 反子网掩码</span><br><span class="line">例如： [Quidway-ospf-area0] network 192.168.1.1 0.0.0.255</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>引入/取消其它协议的路由</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Quidway-ospf] [undo] import-route protocol</span><br><span class="line">protocol: Direct, Static, RIP, BGP, IS-IS</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络综合实验/">网络综合实验</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-网络综合实验提问知识点" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/27/网络综合实验提问知识点/" class="article-date">
-      <time datetime="2017-12-27T12:49:54.000Z" itemprop="datePublished">2017-12-27</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/27/网络综合实验提问知识点/">网络综合实验提问知识点</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><ul>
-<li>DNS报文封装的传输层协议和端口号是：UDP协议  端口号53</li>
-<li>顶级域主要被分为以下三类：<br>Generic TLD: com, edu, org, gov, mil, net, 等.<br>Country Code TLD: cn, us, jp, it, de, 等.<br>Reverse domain: in-addr.arpa</li>
-<li>协议栈有几种<br>应用层（DNS (域名系统:域名与IP地址一一对应)，HTTP，FTP，TFTP，TELNET，EMAIL等）<br>传输层（TCP，UDP）<br>网络层（IP，ARP，ICMP）<br>数据链路层（WI-FI，以太网，令牌环，FDDI，MAC等）<br>物理层</li>
-<li>域名不区分大小写</li>
-</ul>
-<h3 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h3><ul>
-<li>登入交换机：Console口登入 Telnet方式登入</li>
-<li>Console口：<br>配置交换机的最直接方法<br>首次配置交换机唯一可用的方法</li>
-<li>Telnet登入：<br>远程配置交换机的理想方法<br>交换机必须已经完成了一些初始化配置<br>PC机的IP地址配置为与交换机的IP地址在同一网段<br>PC机以太网端口与交换机任一以太网端口相连</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络综合实验/">网络综合实验</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-交换机VLAN配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/17/交换机VLAN配置/" class="article-date">
-      <time datetime="2017-12-17T11:19:00.000Z" itemprop="datePublished">2017-12-17</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/17/交换机VLAN配置/">交换机VLAN配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="使用VLAN的原因"><a href="#使用VLAN的原因" class="headerlink" title="使用VLAN的原因"></a>使用VLAN的原因</h3><p>整个交换机网络构成一个广播域，形成广播域和广播风暴。使用路由器来隔离广播域代价高。使用VLAN来隔离广播域代价低。<br>
           
       
     </div>
@@ -609,7 +333,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2017/12/17/交换机VLAN配置/#more">more >></a>
+          <a href="/2018/01/03/网络综合实验命令/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -657,52 +381,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="Scrapy爬虫框架"><a href="#Scrapy爬虫框架" class="headerlink" title="Scrapy爬虫框架"></a>Scrapy爬虫框架</h3><p>Scrapy：一个快速功能强大的网络爬虫框架。实现爬虫功能的一个软件结构和功能组件的集合。</p>
-<h4 id="Scrapy安装"><a href="#Scrapy安装" class="headerlink" title="Scrapy安装"></a>Scrapy安装</h4><p>管理员身份运行cmd，执行<code>pip install scrapy</code><br>安装测试，执行<code>scrapy -h</code><br><strong>注：如果出现Failed building wheel for Twisted这个错误，则是缺失相应的whl文件（此处缺少Twisted）解决办法：<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml" target="_blank" rel="noopener">https://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml</a><br>下载并安装对应的whl文件。我的python版本为3.6，所以安装Twisted-17.1.0-cp36-cp36m-win_amd64.whl，不要修改文件名。安装时使用管理员身份运行cmd，执行<code>pip install 文件路径+whl文件名</code>即<code>pip install I://Twisted-17.1.0-cp36-cp36m-win_amd64.whl</code>（我的放在I盘）即可，然后再继续执行<code>pip install scrapy</code>即可</strong></p>
-<h4 id="Scrapy爬虫的常用命令"><a href="#Scrapy爬虫的常用命令" class="headerlink" title="Scrapy爬虫的常用命令"></a>Scrapy爬虫的常用命令</h4><p>Scrapy命令行格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy &lt;command&gt; [options] [args]  &lt;command&gt;Scrapy命令</span><br></pre></td></tr></table></figure></p>
-<p>Scrapy常用命令</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>column</th>
-<th>格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>startproject</td>
-<td>创建一个新工程</td>
-<td><code>scrapy startproject &lt;name&gt; [dir]</code></td>
-</tr>
-<tr>
-<td>genspider</td>
-<td>创建一个爬虫</td>
-<td><code>scrapy genspider [options] &lt;name&gt; &lt;domain&gt;</code></td>
-</tr>
-<tr>
-<td>settings</td>
-<td>获取爬虫配置信息</td>
-<td><code>scrapy settings [options]</code></td>
-</tr>
-<tr>
-<td>crawl</td>
-<td>运行一个爬虫</td>
-<td><code>scrapy crawl &lt;spider&gt;</code></td>
-</tr>
-<tr>
-<td>list</td>
-<td>列出工程中所有爬虫</td>
-<td><code>scrapy list</code></td>
-</tr>
-<tr>
-<td>shell</td>
-<td>启动URL调试命令行</td>
-<td><code>scrapy shell [url]</code></td>
-</tr>
-</tbody>
-</table>
-
+              <h3 id="Scrapy爬虫框架"><a href="#Scrapy爬虫框架" class="headerlink" title="Scrapy爬虫框架"></a>Scrapy爬虫框架</h3><p>Scrapy：一个快速功能强大的网络爬虫框架。实现爬虫功能的一个软件结构和功能组件的集合。</p>
+<h4 id="Scrapy安装"><a href="#Scrapy安装" class="headerlink" title="Scrapy安装"></a>Scrapy安装</h4><p>管理员身份运行cmd，执行<code>pip install scrapy</code><br>安装测试，执行<code>scrapy -h</code><br>
+          
       
     </div>
     
@@ -715,6 +396,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Scrapy/">Scrapy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2017/12/17/python网络爬虫（九）/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1098,6 +783,134 @@
       
         <p class="article-more-link">
           <a href="/2017/12/06/python网络爬虫（六）/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-python网络爬虫（五）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/06/python网络爬虫（五）/" class="article-date">
+      <time datetime="2017-12-06T12:00:54.000Z" itemprop="datePublished">2017-12-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/06/python网络爬虫（五）/">python网络爬虫（五）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="基于bs4的HTML内容遍历方法"><a href="#基于bs4的HTML内容遍历方法" class="headerlink" title="基于bs4的HTML内容遍历方法"></a>基于bs4的HTML内容遍历方法</h2><p>html基本格式中&lt;&gt;……&lt;/&gt;构成了所属关系，形成了标签的树形结构。<br>标签树遍历：下行、上行、平行。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BeautifulSoup/">BeautifulSoup</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/12/06/python网络爬虫（五）/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="w-python基本知识（七）" class="article article-type-w" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/12/05/python基本知识（七）/" class="article-date">
+      <time datetime="2017-12-05T12:34:13.000Z" itemprop="datePublished">2017-12-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/05/python基本知识（七）/">python基本知识（七）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><p>字符串：有序的字符的集合。无单个字符，只有一个字符的字符串。字符串中字符存在从左到右的位置顺序。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串/">字符串</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/12/05/python基本知识（七）/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
