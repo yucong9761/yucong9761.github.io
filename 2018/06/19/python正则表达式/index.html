@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/06/19/python正则表达式/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="正则表达式1import re">
-<meta property="og:updated_time" content="2018-06-19T13:46:04.521Z">
+<meta property="og:updated_time" content="2018-07-04T13:37:21.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python正则表达式">
 <meta name="twitter:description" content="正则表达式1import re">
@@ -334,7 +334,11 @@
 <p><strong>注：最好前面使用元字符串r’imooc\n’，可以先生成pattern，再match</strong></p>
 <h2 id="正则表达式语法"><a href="#正则表达式语法" class="headerlink" title="正则表达式语法"></a>正则表达式语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">.     ： 匹配除了\n之外所有字符    一个点是一个任意字符</span><br><span class="line">[...] ： 匹配字符集         r&apos;&#123;[abc]&#125;&apos;，abc中任何一个字符  r&apos;&#123;[a-z]&#125;&apos;，a到z中任何一          个字符        r&apos;&#123;[a-zA-Z0-9]&#125;&apos;，a到z A到Z 0到9之间任意一个字符</span><br><span class="line">\d    :匹配数字</span><br><span class="line">\D    :匹配非数字</span><br><span class="line">\s    :匹配空白</span><br><span class="line">\S    :匹配非空白</span><br><span class="line">\w    :匹配单词字符[a-zA-Z0-9] **需要加上中括号**</span><br><span class="line">\W    :匹配非单词字符</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**注：ma=re.match(r&apos;\[[\w]\]&apos;,&apos;[a]&apos;)需要转义中括号**</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">*         ：匹配前一个字符0次或n次</span><br><span class="line">+         ：匹配前一个字符1次或n次</span><br><span class="line">?         ：匹配前一个字符0次或1次  </span><br><span class="line">&#123;m&#125;/&#123;m,n&#125; ：匹配前一个字符m次或m到n次</span><br><span class="line">*?/+?/??  ：匹配模式变为非贪婪（尽可能少匹配字符）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ma=re.match(r&apos;[0-9][a-z]*?&apos;,&apos;1bc&apos;)   匹配前一个字符0次</span><br><span class="line">ma=re.match(r&apos;[0-9][a-z]+?&apos;,&apos;1bc&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">^     ：匹配字符串开头</span><br><span class="line">$     ：匹配字符串结尾</span><br><span class="line">\A/\Z ：指定的字符串必须出现在开头/结尾</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ma=re.match(r&apos;^[\w]&#123;4,10&#125;@163.com$&apos;,&apos;imooc@163.comaaa&apos;)       无结果，必须以@163.com结尾，以[\w]开头 </span><br><span class="line">ma=re.match(r&apos;\Aimooc[\w]*&apos;,&apos;imooc@163.comaaa&apos;)               必须以imooc开头</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|          ：匹配左面或右面字符串</span><br><span class="line">(ab)       ：括号中表达式分组  </span><br><span class="line">ma=re.match(r&apos;^[\w]&#123;4,10&#125;@(163|126).com$&apos;,&apos;imooc@163.comaaa&apos;) 163或123邮箱</span><br><span class="line">\&lt;number&gt;  ：引用编号为number的分组匹配到的字符串</span><br><span class="line">(?P&lt;name&gt;) ：分组起一个别名</span><br><span class="line">(?P=name)  ：引用别名为name的分组匹配字符串</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -345,7 +349,7 @@
         <p><span>本文标题:</span><a href="/2018/06/19/python正则表达式/">python正则表达式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></p>
         <p><span>发布时间:</span>2018-06-19, 19:35:08</p>
-        <p><span>最后更新:</span>2018-06-19, 21:46:04</p>
+        <p><span>最后更新:</span>2018-07-04, 21:37:21</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/06/19/python正则表达式/" title="python正则表达式">http://yoursite.com/2018/06/19/python正则表达式/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/06/19/python正则表达式/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
