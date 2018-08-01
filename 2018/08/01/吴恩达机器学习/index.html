@@ -15,17 +15,17 @@
 
 
 
-<meta name="description" content="机器学习计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率） 监督学习我们给算法一个数据集，其中包含正确答案。算法的目的是给出更多正确答案。（回归问题、分类问题） 无监督学习只提供一堆">
+<meta name="description" content="机器学习计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率）">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习">
 <meta property="og:url" content="http://yoursite.com/2018/08/01/吴恩达机器学习/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="机器学习计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率） 监督学习我们给算法一个数据集，其中包含正确答案。算法的目的是给出更多正确答案。（回归问题、分类问题） 无监督学习只提供一堆数据，事先没有明确的答案与分类。没有把正确答案提供给算法。算法自身将其分类。（聚">
-<meta property="og:updated_time" content="2018-08-01T03:21:16.987Z">
+<meta property="og:description" content="机器学习计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率）">
+<meta property="og:updated_time" content="2018-08-01T09:56:31.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="吴恩达机器学习">
-<meta name="twitter:description" content="机器学习计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率） 监督学习我们给算法一个数据集，其中包含正确答案。算法的目的是给出更多正确答案。（回归问题、分类问题） 无监督学习只提供一堆数据，事先没有明确的答案与分类。没有把正确答案提供给算法。算法自身将其分类。（聚">
+<meta name="twitter:description" content="机器学习计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率）">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -322,8 +322,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><p>计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率）</p>
-<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>我们给算法一个数据集，其中包含正确答案。算法的目的是给出更多正确答案。（回归问题、分类问题）</p>
+        <h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><p>计算机程序从经验E中学习，解决某一任务T，进行某一性能度量P，通过P测定在T上的表现因经验E而提高。（eg：跳棋 经验E是几万次跳棋 任务T是下跳棋 性能度量P是与新对手下跳棋时赢的概率）<br><a id="more"></a></p>
+<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>我们给算法一个数据集，其中包含正确答案。算法的目的是给出更多正确答案。（回归问题、分类问题）<br>回归问题：对数据中的每个例子给出正确的答案，预测一个具体的数值输出。<br>分类问题：用它来预测离散值输出。</p>
+<p>监督学习中有一个数据集（被称为训练集）：</p>
+<ul>
+<li>m：训练集样本数量</li>
+<li>x：输入变量/特征</li>
+<li>y：输出变量/预测的目标变量</li>
+<li>(x,y)：训练样本</li>
+<li>（xi,yi）：第i个训练样本</li>
+</ul>
+<p>给学习算法输入一个训练集，学习算法给出一个函数（通常用小写h来表示），h代表假设函数，假设函数作用是对给定输入值给出一个输出，引导从x得出y。</p>
+<h4 id="表示假设函数h"><a href="#表示假设函数h" class="headerlink" title="表示假设函数h"></a>表示假设函数h</h4><p>hθ(x)=θ0+θ1x （ hθ(x)有时缩写成h(x) ） （线性回归，一元线性回归，单变量线性回归）<br>θi：模型参数</p>
+<h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>平方误差函数（平方误差代价函数）<br>minimize  1/2m m∑i=1( hθ(xi)-yi )^2  尽量减少这个值<br>1/2m只是为了使数学更直白一点<br>调整θ0和θ1使上述函数最小</p>
 <h3 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h3><p>只提供一堆数据，事先没有明确的答案与分类。没有把正确答案提供给算法。算法自身将其分类。（聚类算法、鸡尾酒会问题）</p>
 <ul>
 <li>管理计算机集群</li>
@@ -342,7 +353,7 @@
         <p><span>本文标题:</span><a href="/2018/08/01/吴恩达机器学习/">吴恩达机器学习</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></p>
         <p><span>发布时间:</span>2018-08-01, 10:37:32</p>
-        <p><span>最后更新:</span>2018-08-01, 11:21:16</p>
+        <p><span>最后更新:</span>2018-08-01, 17:56:31</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/08/01/吴恩达机器学习/" title="吴恩达机器学习">http://yoursite.com/2018/08/01/吴恩达机器学习/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/01/吴恩达机器学习/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -372,7 +383,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习"><span class="toc-number">1.</span> <span class="toc-text">机器学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监督学习"><span class="toc-number">2.</span> <span class="toc-text">监督学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无监督学习"><span class="toc-number">3.</span> <span class="toc-text">无监督学习</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习"><span class="toc-number">1.</span> <span class="toc-text">机器学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监督学习"><span class="toc-number">2.</span> <span class="toc-text">监督学习</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#表示假设函数h"><span class="toc-number">2.1.</span> <span class="toc-text">表示假设函数h</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代价函数"><span class="toc-number">2.2.</span> <span class="toc-text">代价函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无监督学习"><span class="toc-number">3.</span> <span class="toc-text">无监督学习</span></a></li></ol>
         
     </div>
     <style>
