@@ -15,12 +15,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/机器学习/index.html">
+<meta name="description" content="神经网络小神经网络房屋价格预测：输入面积得到价格，中间就是神经元ReLU函数（修正线性单元）：从零开始然后是一条直线，取不小于零的值 大神经网络输入X就能得到输出Y，不管训练集多大，所有中间过程，他自己完成。房屋价格预测：面积、便利程度、卧室数量……作为输入，神经网络工作是预测对应的价格。隐藏单元（中间的圆圈）同时接受">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络（一）">
+<meta property="og:url" content="http://yoursite.com/2018/08/05/神经网络（一）/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="神经网络小神经网络房屋价格预测：输入面积得到价格，中间就是神经元ReLU函数（修正线性单元）：从零开始然后是一条直线，取不小于零的值 大神经网络输入X就能得到输出Y，不管训练集多大，所有中间过程，他自己完成。房屋价格预测：面积、便利程度、卧室数量……作为输入，神经网络工作是预测对应的价格。隐藏单元（中间的圆圈）同时接受来自所有的输入特征，不会具体的说某一节点只接受某些输入，由神经网络自身决定这个节">
+<meta property="og:updated_time" content="2018-08-05T03:42:38.053Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="神经网络（一）">
+<meta name="twitter:description" content="神经网络小神经网络房屋价格预测：输入面积得到价格，中间就是神经元ReLU函数（修正线性单元）：从零开始然后是一条直线，取不小于零的值 大神经网络输入X就能得到输出Y，不管训练集多大，所有中间过程，他自己完成。房屋价格预测：面积、便利程度、卧室数量……作为输入，神经网络工作是预测对应的价格。隐藏单元（中间的圆圈）同时接受来自所有的输入特征，不会具体的说某一节点只接受某些输入，由神经网络自身决定这个节">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 机器学习 | Hexo</title>
+<title>神经网络（一） | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,9 +67,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -277,56 +282,182 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-神经网络（一）" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/01/吴恩达机器学习/" class="archive-article-date">
-      <time datetime="2018-08-01T02:37:32.000Z" itemprop="datePublished">08-01</time>
+    <div class="article-meta">
+      <a href="/2018/08/05/神经网络（一）/" class="article-date">
+      <time datetime="2018-08-05T02:18:09.000Z" itemprop="datePublished">2018-08-05</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/01/吴恩达机器学习/">吴恩达机器学习（一）</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      神经网络（一）
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><h3 id="小神经网络"><a href="#小神经网络" class="headerlink" title="小神经网络"></a>小神经网络</h3><p>房屋价格预测：输入面积得到价格，中间就是神经元<br>ReLU函数（修正线性单元）：从零开始然后是一条直线，取不小于零的值</p>
+<h3 id="大神经网络"><a href="#大神经网络" class="headerlink" title="大神经网络"></a>大神经网络</h3><p>输入X就能得到输出Y，不管训练集多大，所有中间过程，他自己完成。<br>房屋价格预测：面积、便利程度、卧室数量……作为输入，神经网络工作是预测对应的价格。隐藏单元（中间的圆圈）同时接受来自所有的输入特征，不会具体的说某一节点只接受某些输入，由神经网络自身决定这个节点是什么。只提供特征，随便神经网络进行计算。输入层在中间层（神经网络）连接数很高。<br>神经网络只要给足够多的x，y训练样本，则可以计算出从x到y的精准映射函数。</p>
+<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>在监督学习中，输入X习得一个函数，映射到输出Y<br>eg：在线广告                                           标准的神经网络架构<br>计算机视觉（输入一个图像，输出一个指数）                    卷积神经网络（CNN）<br>语音识别（输入音频片段，输出文本）   音频随时间播放（序列数据）循环神经网络（RNN）<br>机器翻译                                               RNNs<br>无人驾驶                                               CNN+复杂神经网络</p>
+<p>CNN：图像<br>RNN：一维序列数据（其中包含时间）</p>
+<p>结构化数据：数据的数据库 每个特征都有着清晰的定义<br>非结构化数据：音频、图像，文本中的数据   计算机理解起来更难</p>
+<h3 id="深度学习进程"><a href="#深度学习进程" class="headerlink" title="深度学习进程"></a>深度学习进程</h3><ul>
+<li>数据</li>
+<li>计算能力规模</li>
+<li>算法</li>
+</ul>
+<p>sigmoid函数，ReLU函数<br>想法→代码→实践</p>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/05/神经网络（一）/">神经网络（一）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></p>
+        <p><span>发布时间:</span>2018-08-05, 10:18:09</p>
+        <p><span>最后更新:</span>2018-08-05, 11:42:38</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/05/神经网络（一）/" title="神经网络（一）">http://yoursite.com/2018/08/05/神经网络（一）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/05/神经网络（一）/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/08/05/神经网络（二）/">
+                    神经网络（二）
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/01/吴恩达机器学习/">
+                    吴恩达机器学习（一）
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#神经网络"><span class="toc-number">1.</span> <span class="toc-text">神经网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#小神经网络"><span class="toc-number">1.1.</span> <span class="toc-text">小神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#大神经网络"><span class="toc-number">1.2.</span> <span class="toc-text">大神经网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#监督学习"><span class="toc-number">1.3.</span> <span class="toc-text">监督学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深度学习进程"><span class="toc-number">1.4.</span> <span class="toc-text">深度学习进程</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-4 i,
+        .toc-level-4 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"神经网络（一）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/08/05/神经网络（二）/" title="上一篇: 神经网络（二）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/01/吴恩达机器学习/" title="下一篇: 吴恩达机器学习（一）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/神经网络（二）/">神经网络（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/神经网络（一）/">神经网络（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/吴恩达机器学习/">吴恩达机器学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/19/python正则表达式/">python正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/17/关于淘宝商品的数据分析/">关于淘宝商品的数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/20/腻歪时间轴/">腻歪时间轴</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/聪聪and蝶蝶/">聪聪and蝶蝶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/18/JavaScript-一/">JavaScript(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/网络综合实验命令/">网络综合实验命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/17/python网络爬虫（九）/">python网络爬虫（九）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/15/交换机端口配置与生成树协议配置/">交换机端口配置与生成树协议配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/登入交换机和COMWARE基本使用/">登入交换机和COMWARE基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/vim（一）/">vim（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/10/python网络爬虫（八）/">python网络爬虫（八）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/python网络爬虫（七）/">python网络爬虫（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（六）/">python网络爬虫（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（五）/">python网络爬虫（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（七）/">python基本知识（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（六）/">python基本知识（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/python基本知识（五）/">python基本知识（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（四）/">python基本知识（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（三）/">python基本知识（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/python基本知识（二）/">python基本知识（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/30/python基本知识（一）/">python基本知识（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（四）/">python网络爬虫（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（三）/">python网络爬虫（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/软件工程复习（一）/">软件工程复习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/python网络爬虫（一）/">python网络爬虫（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

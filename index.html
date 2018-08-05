@@ -284,6 +284,133 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="w-神经网络（二）" class="article article-type-w" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/05/神经网络（二）/" class="article-date">
+      <time datetime="2018-08-05T03:49:12.000Z" itemprop="datePublished">2018-08-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/05/神经网络（二）/">神经网络（二）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="二分分类（logistic回归）"><a href="#二分分类（logistic回归）" class="headerlink" title="二分分类（logistic回归）"></a>二分分类（logistic回归）</h3><p>计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。<br>二分分类：以图片特征向量x作为输入，预测输出的结果标签y（0或1）</p>
+<h4 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h4><p>(x,y)：一个单独的样本   x是nx维的特征向量   标签y值为0或1<br>训练集由m个样本组成，（x1,y1）表示样本一的输入输出……以此类推<br>m：训练样本个数<br><strong>有时会m=m_train(训练样本数)，m_text(测试样本数)</strong><br>用更紧凑的符号表示训练集：定义一个矩阵X由训练集中的x1，x2……组成列，x1放进矩阵第一列，x2放入第二列……行数记为nx，有时将x1,x2……转置，一行行构成X<br>X是一个nx × m的矩阵<br>同理，Y=[y1,y2,……,ym] 1×m的矩阵</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-神经网络（一）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/05/神经网络（一）/" class="article-date">
+      <time datetime="2018-08-05T02:18:09.000Z" itemprop="datePublished">2018-08-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/05/神经网络（一）/">神经网络（一）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h2><h3 id="小神经网络"><a href="#小神经网络" class="headerlink" title="小神经网络"></a>小神经网络</h3><p>房屋价格预测：输入面积得到价格，中间就是神经元<br>ReLU函数（修正线性单元）：从零开始然后是一条直线，取不小于零的值</p>
+<h3 id="大神经网络"><a href="#大神经网络" class="headerlink" title="大神经网络"></a>大神经网络</h3><p>输入X就能得到输出Y，不管训练集多大，所有中间过程，他自己完成。<br>房屋价格预测：面积、便利程度、卧室数量……作为输入，神经网络工作是预测对应的价格。隐藏单元（中间的圆圈）同时接受来自所有的输入特征，不会具体的说某一节点只接受某些输入，由神经网络自身决定这个节点是什么。只提供特征，随便神经网络进行计算。输入层在中间层（神经网络）连接数很高。<br>神经网络只要给足够多的x，y训练样本，则可以计算出从x到y的精准映射函数。</p>
+<h3 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h3><p>在监督学习中，输入X习得一个函数，映射到输出Y<br>eg：在线广告                                           标准的神经网络架构<br>计算机视觉（输入一个图像，输出一个指数）                    卷积神经网络（CNN）<br>语音识别（输入音频片段，输出文本）   音频随时间播放（序列数据）循环神经网络（RNN）<br>机器翻译                                               RNNs<br>无人驾驶                                               CNN+复杂神经网络</p>
+<p>CNN：图像<br>RNN：一维序列数据（其中包含时间）</p>
+<p>结构化数据：数据的数据库 每个特征都有着清晰的定义<br>非结构化数据：音频、图像，文本中的数据   计算机理解起来更难</p>
+<h3 id="深度学习进程"><a href="#深度学习进程" class="headerlink" title="深度学习进程"></a>深度学习进程</h3><ul>
+<li>数据</li>
+<li>计算能力规模</li>
+<li>算法</li>
+</ul>
+<p>sigmoid函数，ReLU函数<br>想法→代码→实践</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-吴恩达机器学习" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -303,7 +430,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/01/吴恩达机器学习/">吴恩达机器学习</a>
+      <a class="article-title" href="/2018/08/01/吴恩达机器学习/">吴恩达机器学习（一）</a>
     </h1>
   
 
@@ -853,137 +980,9 @@
 
 
   
-    <article id="post-交换机端口配置与生成树协议配置" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/15/交换机端口配置与生成树协议配置/" class="article-date">
-      <time datetime="2017-12-15T08:47:26.000Z" itemprop="datePublished">2017-12-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/15/交换机端口配置与生成树协议配置/">交换机端口配置与生成树协议配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="交换机端口配置与生成树协议配置"><a href="#交换机端口配置与生成树协议配置" class="headerlink" title="交换机端口配置与生成树协议配置"></a>交换机端口配置与生成树协议配置</h3>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络综合实验/">网络综合实验</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/12/15/交换机端口配置与生成树协议配置/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-登入交换机和COMWARE基本使用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/14/登入交换机和COMWARE基本使用/" class="article-date">
-      <time datetime="2017-12-14T12:52:10.000Z" itemprop="datePublished">2017-12-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/14/登入交换机和COMWARE基本使用/">登入交换机和COMWARE基本使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><p>交换机就是一台有专门用途的计算机。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络综合实验/">网络综合实验</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/12/14/登入交换机和COMWARE基本使用/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>

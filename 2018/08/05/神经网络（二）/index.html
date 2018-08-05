@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/tags/机器学习/index.html">
+<meta name="description" content="神经网络基础二分分类（logistic回归）计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神经网络（二）">
+<meta property="og:url" content="http://yoursite.com/2018/08/05/神经网络（二）/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="神经网络基础二分分类（logistic回归）计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。二分分类：以图片特征向量x作为输入，预测输出的结果标">
+<meta property="og:updated_time" content="2018-08-05T04:10:54.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="神经网络（二）">
+<meta name="twitter:description" content="神经网络基础二分分类（logistic回归）计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。二分分类：以图片特征向量x作为输入，预测输出的结果标">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 机器学习 | Hexo</title>
+<title>神经网络（二） | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,9 +66,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -277,56 +281,161 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="w-神经网络（二）" class="article article-type-w" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/08/01/吴恩达机器学习/" class="archive-article-date">
-      <time datetime="2018-08-01T02:37:32.000Z" itemprop="datePublished">08-01</time>
+    <div class="article-meta">
+      <a href="/2018/08/05/神经网络（二）/" class="article-date">
+      <time datetime="2018-08-05T03:49:12.000Z" itemprop="datePublished">2018-08-05</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/01/吴恩达机器学习/">吴恩达机器学习（一）</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      神经网络（二）
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+        <h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="二分分类（logistic回归）"><a href="#二分分类（logistic回归）" class="headerlink" title="二分分类（logistic回归）"></a>二分分类（logistic回归）</h3><p>计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。<br>二分分类：以图片特征向量x作为输入，预测输出的结果标签y（0或1）</p>
+<h4 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h4><p>(x,y)：一个单独的样本   x是nx维的特征向量   标签y值为0或1<br>训练集由m个样本组成，（x1,y1）表示样本一的输入输出……以此类推<br>m：训练样本个数<br><strong>有时会m=m_train(训练样本数)，m_text(测试样本数)</strong><br>用更紧凑的符号表示训练集：定义一个矩阵X由训练集中的x1，x2……组成列，x1放进矩阵第一列，x2放入第二列……行数记为nx，有时将x1,x2……转置，一行行构成X<br>X是一个nx × m的矩阵<br>同理，Y=[y1,y2,……,ym] 1×m的矩阵</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/05/神经网络（二）/">神经网络（二）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></p>
+        <p><span>发布时间:</span>2018-08-05, 11:49:12</p>
+        <p><span>最后更新:</span>2018-08-05, 12:10:54</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/05/神经网络（二）/" title="神经网络（二）">http://yoursite.com/2018/08/05/神经网络（二）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/05/神经网络（二）/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/05/神经网络（一）/">
+                    神经网络（一）
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#神经网络基础"><span class="toc-number">1.</span> <span class="toc-text">神经网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二分分类（logistic回归）"><span class="toc-number">1.1.</span> <span class="toc-text">二分分类（logistic回归）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#符号"><span class="toc-number">1.1.1.</span> <span class="toc-text">符号</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-4 i,
+        .toc-level-4 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"神经网络（二）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/05/神经网络（一）/" title="下一篇: 神经网络（一）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/神经网络（二）/">神经网络（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/05/神经网络（一）/">神经网络（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/01/吴恩达机器学习/">吴恩达机器学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/19/python正则表达式/">python正则表达式</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/17/关于淘宝商品的数据分析/">关于淘宝商品的数据分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/20/腻歪时间轴/">腻歪时间轴</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/05/11/聪聪and蝶蝶/">聪聪and蝶蝶</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/18/JavaScript-一/">JavaScript(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/网络综合实验命令/">网络综合实验命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/17/python网络爬虫（九）/">python网络爬虫（九）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/15/交换机端口配置与生成树协议配置/">交换机端口配置与生成树协议配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/14/登入交换机和COMWARE基本使用/">登入交换机和COMWARE基本使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/12/vim（一）/">vim（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/10/python网络爬虫（八）/">python网络爬虫（八）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/07/python网络爬虫（七）/">python网络爬虫（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（六）/">python网络爬虫（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/06/python网络爬虫（五）/">python网络爬虫（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（七）/">python基本知识（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/05/python基本知识（六）/">python基本知识（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/04/python基本知识（五）/">python基本知识（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（四）/">python基本知识（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/03/python基本知识（三）/">python基本知识（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/12/01/python基本知识（二）/">python基本知识（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/30/python基本知识（一）/">python基本知识（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（四）/">python网络爬虫（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/python网络爬虫（三）/">python网络爬虫（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/29/软件工程复习（一）/">软件工程复习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/28/python网络爬虫（二）/">python网络爬虫（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/27/python网络爬虫（一）/">python网络爬虫（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/26/my-first-blog/">my first blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
