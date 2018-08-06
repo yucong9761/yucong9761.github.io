@@ -146,13 +146,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -280,7 +280,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
   
@@ -315,6 +315,14 @@
           
         <h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="二分分类（logistic回归）"><a href="#二分分类（logistic回归）" class="headerlink" title="二分分类（logistic回归）"></a>二分分类（logistic回归）</h3><p>计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。<br>二分分类：以图片特征向量x作为输入，预测输出的结果标签y（0或1）</p>
 <h4 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h4><p>(x,y)：一个单独的样本   x是nx维的特征向量   标签y值为0或1<br>训练集由m个样本组成，（x1,y1）表示样本一的输入输出……以此类推<br>m：训练样本个数<br><strong>有时会m=m_train(训练样本数)，m_text(测试样本数)</strong><br>用更紧凑的符号表示训练集：定义一个矩阵X由训练集中的x1，x2……组成列，x1放进矩阵第一列，x2放入第二列……行数记为nx，有时将x1,x2……转置，一行行构成X<br>X是一个nx × m的矩阵<br>同理，Y=[y1,y2,……,ym] 1×m的矩阵</p>
+<h3 id="logistic回归"><a href="#logistic回归" class="headerlink" title="logistic回归"></a>logistic回归</h3><p>logistic回归：一个学习算法，用在监督学习问题中，输出y标签是0或1，是一个二元分类问题。<br>eg：已知输入特征向量X可能是一张图，希望识别出这是不是猫图。<br>给定x，需要一个算法，给出一个预测值y（准确说y是一个概率，输入x满足条件时y是1）<br>x是一个nx维向量，已知logistic回归的参数是w（也是一个nx维向量），b（一个实数）。已知输入x，参数w和b，输出预测的y。<br>线性回归：y=w^T×x+b<br>由于得到的y是一个概率，则y介于0到1之间，所以不能直接用线性回归。所以，logistic之中y等于sigmoid函数作用于w^T×x+b这个量上<br><strong>sigmoid函数：sigmoid(z)=1/(1+e^(-z)) 当z→∞时，函数→1；当z→-∞，函数→0</strong><br>当实现logistic回归时，要做的是学习参数w和b，所以y变成了比较好的估计，对于y=1的概率比较好的估计。</p>
+<h4 id="符号约定"><a href="#符号约定" class="headerlink" title="符号约定"></a>符号约定</h4><p>编程时通常将w和b分开。b对应一个拦截器。<br>定义一个额外特征向量x0，等于1，所以出现x是nx+1维向量。<br>将y定义为sigmoid(θ^T×x)，θ由θ0，θ1……θnx组成的列向量，其中θ0扮演b的角色，θ1到θnx的作用和w一样。<br><strong>注：当实现神经网络时，将b和w看作独立的参数可能更好</strong></p>
+<h3 id="logistic回归损失函数"><a href="#logistic回归损失函数" class="headerlink" title="logistic回归损失函数"></a>logistic回归损失函数</h3><p>为了训练logistic回归模型的参数w和b，需要定义一个成本函数。<br>前提：输出y=sigmoid(w^T×x+b)，给出一个m个样本的训练集，在训练集里找到w和b，从而得到输出。对于训练集中得到的预测值y帽，期望接近训练集中的y。</p>
+<h4 id="损失函数（误差函数）"><a href="#损失函数（误差函数）" class="headerlink" title="损失函数（误差函数）"></a>损失函数（误差函数）</h4><p>衡量算法运行情况，定义损失函数为y帽和y的差的平方（或平方的二分之一）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">L(y帽,y)=1/2(y帽-y)^2</span><br></pre></td></tr></table></figure></p>
+<p><strong>注：此时梯度下降算法会失灵</strong><br><strong>更改损失函数，提供一个凸的优化问题</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L(y帽,y)=-( y * log(y帽) + (1-y) * log(1-y帽) )</span><br><span class="line">此时：1.y为1时，第二项为零，要使损失函数尽可能小，则log(y帽)尽可能大，y帽由sigmoid函数得出，取0到1，则要使y帽尽可能的取到1</span><br><span class="line">2.y为0时，第一项为零，要使损失函数尽可能小，则log(1-y帽)尽可能大，y帽尽可能小，同理，要使y帽尽可能取0</span><br></pre></td></tr></table></figure></p>
+<p><strong>注：此损失函数是单个训练样本上，衡量在单个训练样本上的表现。成本函数：衡量在全体训练样本上的表现。</strong></p>
+<h4 id="成本函数"><a href="#成本函数" class="headerlink" title="成本函数"></a>成本函数</h4><p>在全体训练样本上的表现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">J(w,b)=1/m m∑i=1 L(y帽i,yi)=-1/m m∑i=1 [yi × log(y帽i)+ (1-yi) × log(1-y帽i)]</span><br></pre></td></tr></table></figure></p>
+<p><strong>损失函数只用于单个训练样本，成本函数是基于参数的总成本。在训练logistic模型中，要找到合适的w和b，让成本函数J尽可能地小</strong></p>
 
       
     </div>
@@ -994,14 +1002,14 @@
                 2017-2018 聪聪&amp;&amp;蝶蝶
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1010,7 +1018,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1068,9 +1076,9 @@ MathJax.Hub.Queue(function() {
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
