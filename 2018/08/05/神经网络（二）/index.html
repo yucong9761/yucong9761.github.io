@@ -27,7 +27,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/05/神经网络（二）/神经网络（二）/4.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/神经网络（二）/神经网络（二）/5.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/08/05/神经网络（二）/神经网络（二）/6.PNG">
-<meta property="og:updated_time" content="2018-08-08T03:18:02.167Z">
+<meta property="og:updated_time" content="2018-08-08T03:23:42.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络（二）">
 <meta name="twitter:description" content="神经网络基础二分分类（logistic回归）计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。二分分类：以图片特征向量x作为输入，预测输出的结果标">
@@ -152,13 +152,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -286,7 +286,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap"><article id="w-神经网络（二）" class="article article-type-w" itemscope itemprop="blogPost">
   
@@ -324,7 +324,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="二分分类（logistic回归）"><a href="#二分分类（logistic回归）" class="headerlink" title="二分分类（logistic回归）"></a>二分分类（logistic回归）</h3><p>计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。<br>二分分类：以图片特征向量x作为输入，预测输出的结果标签y（0或1）</p>
+        <h2 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h2><h3 id="二分分类（logistic回归）"><a href="#二分分类（logistic回归）" class="headerlink" title="二分分类（logistic回归）"></a>二分分类（logistic回归）</h3><p>计算机保存照片：建立保存三个独立的矩阵，分别对应图片中的红、绿、蓝三个颜色通道（eg：输入图片是64×64像素，则有三个64×64的矩阵）。把这些像素亮度值放进一个特征向量中，就要把这些像素值提出来，放入一个特征向量x，把所有像素值取出来（红、绿、蓝像素强度值都列出来）放入x（1列 64×64×3行）。<br>二分分类：以图片特征向量x作为输入，预测输出的结果标签y（0或1）<br><a id="more"></a></p>
 <h4 id="符号"><a href="#符号" class="headerlink" title="符号"></a>符号</h4><p>(x,y)：一个单独的样本   x是nx维的特征向量   标签y值为0或1<br>训练集由m个样本组成，（x1,y1）表示样本一的输入输出……以此类推<br>m：训练样本个数<br><strong>有时会m=m_train(训练样本数)，m_text(测试样本数)</strong><br>用更紧凑的符号表示训练集：定义一个矩阵X由训练集中的x1，x2……组成列，x1放进矩阵第一列，x2放入第二列……行数记为nx，有时将x1,x2……转置，一行行构成X<br>X是一个nx × m的矩阵<br>同理，Y=[y1,y2,……,ym] 1×m的矩阵</p>
 <h3 id="logistic回归"><a href="#logistic回归" class="headerlink" title="logistic回归"></a>logistic回归</h3><p>logistic回归：一个学习算法，用在监督学习问题中，输出y标签是0或1，是一个二元分类问题。<br>eg：已知输入特征向量X可能是一张图，希望识别出这是不是猫图。<br>给定x，需要一个算法，给出一个预测值y（准确说y是一个概率，输入x满足条件时y是1）<br>x是一个nx维向量，已知logistic回归的参数是w（也是一个nx维向量），b（一个实数）。已知输入x，参数w和b，输出预测的y。<br>线性回归：y=w^T×x+b<br>由于得到的y是一个概率，则y介于0到1之间，所以不能直接用线性回归。所以，logistic之中y等于sigmoid函数作用于w^T×x+b这个量上<br><strong>sigmoid函数：sigmoid(z)=1/(1+e^(-z)) 当z→∞时，函数→1；当z→-∞，函数→0</strong><br>当实现logistic回归时，要做的是学习参数w和b，所以y变成了比较好的估计，对于y=1的概率比较好的估计。</p>
 <h4 id="符号约定"><a href="#符号约定" class="headerlink" title="符号约定"></a>符号约定</h4><p>编程时通常将w和b分开。b对应一个拦截器。<br>定义一个额外特征向量x0，等于1，所以出现x是nx+1维向量。<br>将y定义为sigmoid(θ^T×x)，θ由θ0，θ1……θnx组成的列向量，其中θ0扮演b的角色，θ1到θnx的作用和w一样。<br><strong>注：当实现神经网络时，将b和w看作独立的参数可能更好</strong></p>
@@ -370,17 +370,17 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2018/08/05/神经网络（二）/">神经网络（二）</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">聪聪&amp;&amp;蝶蝶</a></p>
-        <p><span>Created:</span>2018-08-05, 11:49:12</p>
-        <p><span>Updated:</span>2018-08-08, 11:18:02</p>
+        <p><span>本文标题:</span><a href="/2018/08/05/神经网络（二）/">神经网络（二）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></p>
+        <p><span>发布时间:</span>2018-08-05, 11:49:12</p>
+        <p><span>最后更新:</span>2018-08-08, 11:23:42</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2018/08/05/神经网络（二）/" title="神经网络（二）">http://yoursite.com/2018/08/05/神经网络（二）/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/08/05/神经网络（二）/　　By 聪聪&amp;&amp;蝶蝶" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/05/神经网络（二）/" title="神经网络（二）">http://yoursite.com/2018/08/05/神经网络（二）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/05/神经网络（二）/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
         </p>
     </div>
 
@@ -401,7 +401,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
+        <strong class="toc-title">文章目录</strong>
         
             <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#神经网络基础"><span class="toc-number">1.</span> <span class="toc-text">神经网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二分分类（logistic回归）"><span class="toc-number">1.1.</span> <span class="toc-text">二分分类（logistic回归）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#符号"><span class="toc-number">1.1.1.</span> <span class="toc-text">符号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logistic回归"><span class="toc-number">1.2.</span> <span class="toc-text">logistic回归</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#符号约定"><span class="toc-number">1.2.1.</span> <span class="toc-text">符号约定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logistic回归损失函数"><span class="toc-number">1.3.</span> <span class="toc-text">logistic回归损失函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#损失函数（误差函数）"><span class="toc-number">1.3.1.</span> <span class="toc-text">损失函数（误差函数）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#成本函数"><span class="toc-number">1.4.</span> <span class="toc-text">成本函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#梯度下降算法"><span class="toc-number">1.5.</span> <span class="toc-text">梯度下降算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算图"><span class="toc-number">1.6.</span> <span class="toc-text">计算图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算图导数计算"><span class="toc-number">1.7.</span> <span class="toc-text">计算图导数计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#logistic回归中的梯度下降法"><span class="toc-number">1.8.</span> <span class="toc-text">logistic回归中的梯度下降法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单个样本"><span class="toc-number">1.8.1.</span> <span class="toc-text">单个样本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#m个样本"><span class="toc-number">1.8.2.</span> <span class="toc-text">m个样本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向量化方法"><span class="toc-number">1.9.</span> <span class="toc-text">向量化方法</span></a></li></ol></li></ol>
         
@@ -417,10 +417,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
     <script>
-        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
     </script>
 
 
@@ -459,13 +459,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/08/05/神经网络（一）/" title="Next: 神经网络（一）">
+            <a href="/2018/08/05/神经网络（一）/" title="下一篇: 神经网络（一）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -488,14 +488,14 @@
                 2017-2018 聪聪&amp;&amp;蝶蝶
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -504,7 +504,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -558,9 +558,9 @@ MathJax.Hub.Queue(function() {
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
