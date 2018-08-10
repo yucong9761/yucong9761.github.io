@@ -284,6 +284,76 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-神经网络（三）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/10/神经网络（三）/" class="article-date">
+      <time datetime="2018-08-10T03:30:46.000Z" itemprop="datePublished">2018-08-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/10/神经网络（三）/">神经网络（三）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="神经网络概览"><a href="#神经网络概览" class="headerlink" title="神经网络概览"></a>神经网络概览</h3><p>很多sigmoid单元堆叠起来构造一个神经网络。这些节点对应两个计算步骤，先计算出z值然后再计算出a的值。<br><strong>符号：x表示输入特征</strong><br><em>注：上标圆括号（i）用来表示单个训练样本，第i个训练样本。上标方括号[i]表示不同层 eg网络的第一层，第二层……</em><br>logistic回归中得到z直接计算a作为下一层的输入，如此反复计算a和z。最后计算损失函数。<br>以下神经网络是将logistic回归计算两次：</p>
+<p><img src="/2018/08/10/神经网络（三）/神经网络（三）\1.PNG" alt="1.PNG"></p>
+<h3 id="神经网络表示"><a href="#神经网络表示" class="headerlink" title="神经网络表示"></a>神经网络表示</h3><p>只有一个隐藏层的神经网络即双层神经网络：</p>
+<p><img src="/2018/08/10/神经网络（三）/神经网络（三）\2.PNG" alt="2.PNG"></p>
+<p>各部分命名：</p>
+<ul>
+<li>输入特征x1,x2,x3竖向堆叠起来，作为神经网络的输入层</li>
+<li>中间圆圈称为神经网络的隐藏层</li>
+<li>最后一层只有一个节点称为神经网络的输出层，负责输出预测值y帽<br>在一个神经网络中，用监督学习训练它的时候，训练集包含了输入x还有目标输出y。隐藏层的含义是在训练集中这些中间节点的真正数值（我们不知道，在训练集中看不到它们的数值）。在训练集中只能看到输入值和输出值，看不到隐藏层中的值。</li>
+</ul>
+<p><strong>符号：</strong><br>向量x表示输入特征，输入特征的数值也可以用a^[0]来表示。a表示激活，意味着网络中不同层的值，会传递给后面的层。输入层将x的值传递给隐藏层，将输入层的激活值称为a上标[0]，隐藏层也同样产生一些激活值，记作a^[1]。具体来说从上到下的单元或者说是节点，将其依次表示成a^[1]_1,a^[1]_2……（上图中a^[1]是一个思维向量，在python中是一个4×1矩阵）。最后输出值会产生某个数值a^[2]是个实数。y帽就等于a^[2]。<br>在计算神经网络层数时不算输入层，隐藏层是第一层，输出层是第二层。符号约定中，a^[0]输入层作为第零层。<br>隐藏层参数w^[1]和b^[1]，w^[1]是一个4×3矩阵，b^[1]是一个4×1的矩阵，第一个数字4指的是有4个节点或4个隐藏单元，数字3来自3个输入特征<br>输出层参数w^[2]和b^[2]，w^[2]是一个1×4矩阵，b^[2]是一个1×1矩阵。因为隐藏层有四个隐藏单元，而输出层只有一个单元</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="w-神经网络（二）" class="article article-type-w" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -904,71 +974,6 @@
       
         <p class="article-more-link">
           <a href="/2018/01/03/网络综合实验命令/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-python网络爬虫（九）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/12/17/python网络爬虫（九）/" class="article-date">
-      <time datetime="2017-12-17T10:23:24.000Z" itemprop="datePublished">2017-12-17</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/17/python网络爬虫（九）/">python网络爬虫（九）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="Scrapy爬虫框架"><a href="#Scrapy爬虫框架" class="headerlink" title="Scrapy爬虫框架"></a>Scrapy爬虫框架</h3><p>Scrapy：一个快速功能强大的网络爬虫框架。实现爬虫功能的一个软件结构和功能组件的集合。</p>
-<h4 id="Scrapy安装"><a href="#Scrapy安装" class="headerlink" title="Scrapy安装"></a>Scrapy安装</h4><p>管理员身份运行cmd，执行<code>pip install scrapy</code><br>安装测试，执行<code>scrapy -h</code><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Scrapy/">Scrapy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2017/12/17/python网络爬虫（九）/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

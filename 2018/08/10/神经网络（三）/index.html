@@ -15,17 +15,20 @@
 
 
 
-<meta name="description" content="字典字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。">
-<meta name="keywords" content="python,字典">
+<meta name="description" content="神经网络概览很多sigmoid单元堆叠起来构造一个神经网络。这些节点对应两个计算步骤，先计算出z值然后再计算出a的值。符号：x表示输入特征注：上标圆括号（i）用来表示单个训练样本，第i个训练样本。上标方括号[i]表示不同层 eg网络的第一层，第二层……logistic回归中得到z直接计算a作为下一层的输入，如此反复计算">
+<meta name="keywords" content="神经网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python基本知识（三）">
-<meta property="og:url" content="http://yoursite.com/2017/12/03/python基本知识（三）/index.html">
+<meta property="og:title" content="神经网络（三）">
+<meta property="og:url" content="http://yoursite.com/2018/08/10/神经网络（三）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="字典字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。">
-<meta property="og:updated_time" content="2017-12-03T11:40:17.076Z">
+<meta property="og:description" content="神经网络概览很多sigmoid单元堆叠起来构造一个神经网络。这些节点对应两个计算步骤，先计算出z值然后再计算出a的值。符号：x表示输入特征注：上标圆括号（i）用来表示单个训练样本，第i个训练样本。上标方括号[i]表示不同层 eg网络的第一层，第二层……logistic回归中得到z直接计算a作为下一层的输入，如此反复计算a和z。最后计算损失函数。以下神经网络是将logistic回归计算两次：  神经">
+<meta property="og:image" content="http://yoursite.com/2018/08/10/神经网络（三）/神经网络（三）/1.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/08/10/神经网络（三）/神经网络（三）/2.PNG">
+<meta property="og:updated_time" content="2018-08-10T04:58:43.630Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python基本知识（三）">
-<meta name="twitter:description" content="字典字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。">
+<meta name="twitter:title" content="神经网络（三）">
+<meta name="twitter:description" content="神经网络概览很多sigmoid单元堆叠起来构造一个神经网络。这些节点对应两个计算步骤，先计算出z值然后再计算出a的值。符号：x表示输入特征注：上标圆括号（i）用来表示单个训练样本，第i个训练样本。上标方括号[i]表示不同层 eg网络的第一层，第二层……logistic回归中得到z直接计算a作为下一层的输入，如此反复计算a和z。最后计算损失函数。以下神经网络是将logistic回归计算两次：  神经">
+<meta name="twitter:image" content="http://yoursite.com/2018/08/10/神经网络（三）/神经网络（三）/1.PNG">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>python基本知识（三） | Hexo</title>
+<title>神经网络（三） | Hexo</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -282,11 +285,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="w-python基本知识（三）" class="article article-type-w" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-神经网络（三）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/12/03/python基本知识（三）/" class="article-date">
-      <time datetime="2017-12-03T05:45:02.000Z" itemprop="datePublished">2017-12-03</time>
+      <a href="/2018/08/10/神经网络（三）/" class="article-date">
+      <time datetime="2018-08-10T03:30:46.000Z" itemprop="datePublished">2018-08-10</time>
 </a>
 
 
@@ -301,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      python基本知识（三）
+      神经网络（三）
     </h1>
   
 
@@ -312,7 +315,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字典/">字典</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/神经网络/">神经网络</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,22 +325,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>字典是一种映射，它们通过键而不是相对位置来存储。映射是将键映射到值。字典是python核心对象集合中的唯一的一种映射类型，也具有可变性——可以就地改变，并可以随需求最大或减小。<br><a id="more"></a></p>
-<h3 id="映射操作"><a href="#映射操作" class="headerlink" title="映射操作"></a>映射操作</h3><p>作为常量编写时，字典编写在大括号中，并包含一系列的“键：值”对。eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D=&#123;&apos;food&apos;:&apos;apply&apos;,&apos;quantity&apos;:4,&apos;color&apos;:&apos;pink&apos;&#125;</span><br><span class="line">D[&apos;food&apos;]</span><br><span class="line">D[&apos;quantity&apos;]+=1</span><br><span class="line">D</span><br></pre></td></tr></table></figure></p>
-<p>第二种创建字典方法。开始一个空的字典，然后每次以一个键来填写它。对一个新的字典的键赋值会创建该键：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">D=&#123;&#125;</span><br><span class="line">D[&apos;name&apos;]=&apos;Bob&apos;</span><br><span class="line">D[&apos;job&apos;]=&apos;dev&apos;</span><br><span class="line">D[&apos;age&apos;]=40</span><br><span class="line">D</span><br><span class="line">print(D[&apos;name&apos;])</span><br></pre></td></tr></table></figure></p>
-<p>在这里，我们实际上使用字典中的键。在另一个应用中，字典也可以用来执行搜索。<strong>通过键索引一个字典往往是python中编写搜索的最快方法</strong></p>
-<h3 id="重访嵌套"><a href="#重访嵌套" class="headerlink" title="重访嵌套"></a>重访嵌套</h3><p>上述例子复杂一下，需要记录名（first name）和姓（last name），且有多个工作头衔。这产生了另一个python对象嵌套的应用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rec=&#123;&apos;name&apos;:&#123;&apos;first&apos;:&apos;Bob&apos;,&apos;last&apos;:&apos;Smith&apos;&#125;,</span><br><span class="line">             &apos;job&apos;:[&apos;dev&apos;,&apos;mgr&apos;],</span><br><span class="line">             &apos;age&apos;:40.5&#125;</span><br></pre></td></tr></table></figure></p>
-<p>在顶层使用了三个键的字典（“name”，“job”，“age”），值的情况变得复杂得多：一个嵌套的字典作为name的值，支持多个部分，一个嵌套的列表作为job的值从而支持多个角色和未来的扩展。能够获取这个结构的组件，就像之前在矩阵中所做的那样，但这次索引的是字典的键。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rec[&apos;name&apos;]</span><br><span class="line">rec[&apos;name&apos;][&apos;last&apos;]</span><br><span class="line">rec[&apos;job&apos;]</span><br><span class="line">rec[&apos;job&apos;][-1]</span><br><span class="line">rec[&apos;job&apos;].append(&apos;janitor&apos;)</span><br></pre></td></tr></table></figure></p>
-<p>最后一行是扩展嵌入job列表的。</p>
-<h3 id="键的排序：for循环"><a href="#键的排序：for循环" class="headerlink" title="键的排序：for循环"></a>键的排序：for循环</h3><p>字典不是序列，不包括任何可靠的从左至右的顺序。所以，建立一个字典并将它打印出来，它的键也许会以与我们输入时不同的顺序出现。<br>当在一个字典的元素中，需要强调某种顺序时，通过字典的keys方法收集一个键的列表，使用列表的sort方法进行排序，然后用python的for循环逐个进行显示结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">D=&#123;&apos;a&apos;:1,&apos;b&apos;:2,&apos;c&apos;:3&#125;</span><br><span class="line">D</span><br><span class="line">ks=list(D.keys())</span><br><span class="line">ks</span><br><span class="line">ks.sort()</span><br><span class="line">for key in ks:</span><br><span class="line">     print(key,&quot;:&quot;,D[key])</span><br></pre></td></tr></table></figure></p>
-<p>也可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for key in sorted(D):</span><br><span class="line">     print(key,&quot;:&quot;,D[key])</span><br></pre></td></tr></table></figure></p>
-<h3 id="迭代优化"><a href="#迭代优化" class="headerlink" title="迭代优化"></a>迭代优化</h3><p>iter(object[, sentinel])函数：<a href="http://www.runoob.com/python/python-func-iter.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-func-iter.html</a><br>next(iterator[, default])函数：<a href="http://www.runoob.com/python/python-func-next.html" target="_blank" rel="noopener">http://www.runoob.com/python/python-func-next.html</a></p>
-<h3 id="不存在的键：if测试"><a href="#不存在的键：if测试" class="headerlink" title="不存在的键：if测试"></a>不存在的键：if测试</h3><p>in关系表达式查询字典中的一个键是否存在<code>&#39;f&#39; in D</code>，通过if语句对结果进行处理。<br><em>其他方法：</em></p>
+        <h3 id="神经网络概览"><a href="#神经网络概览" class="headerlink" title="神经网络概览"></a>神经网络概览</h3><p>很多sigmoid单元堆叠起来构造一个神经网络。这些节点对应两个计算步骤，先计算出z值然后再计算出a的值。<br><strong>符号：x表示输入特征</strong><br><em>注：上标圆括号（i）用来表示单个训练样本，第i个训练样本。上标方括号[i]表示不同层 eg网络的第一层，第二层……</em><br>logistic回归中得到z直接计算a作为下一层的输入，如此反复计算a和z。最后计算损失函数。<br>以下神经网络是将logistic回归计算两次：</p>
+<p><img src="/2018/08/10/神经网络（三）/神经网络（三）\1.PNG" alt="1.PNG"></p>
+<h3 id="神经网络表示"><a href="#神经网络表示" class="headerlink" title="神经网络表示"></a>神经网络表示</h3><p>只有一个隐藏层的神经网络即双层神经网络：</p>
+<p><img src="/2018/08/10/神经网络（三）/神经网络（三）\2.PNG" alt="2.PNG"></p>
+<p>各部分命名：</p>
 <ul>
-<li>get方法：带有一个默认值的条件索引。eg：<code>value=D.get(&#39;x&#39;,0)</code>如果不存在，value为0</li>
-<li>try语句</li>
-<li>if/else表达式</li>
+<li>输入特征x1,x2,x3竖向堆叠起来，作为神经网络的输入层</li>
+<li>中间圆圈称为神经网络的隐藏层</li>
+<li>最后一层只有一个节点称为神经网络的输出层，负责输出预测值y帽<br>在一个神经网络中，用监督学习训练它的时候，训练集包含了输入x还有目标输出y。隐藏层的含义是在训练集中这些中间节点的真正数值（我们不知道，在训练集中看不到它们的数值）。在训练集中只能看到输入值和输出值，看不到隐藏层中的值。</li>
 </ul>
+<p><strong>符号：</strong><br>向量x表示输入特征，输入特征的数值也可以用a^[0]来表示。a表示激活，意味着网络中不同层的值，会传递给后面的层。输入层将x的值传递给隐藏层，将输入层的激活值称为a上标[0]，隐藏层也同样产生一些激活值，记作a^[1]。具体来说从上到下的单元或者说是节点，将其依次表示成a^[1]_1,a^[1]_2……（上图中a^[1]是一个思维向量，在python中是一个4×1矩阵）。最后输出值会产生某个数值a^[2]是个实数。y帽就等于a^[2]。<br>在计算神经网络层数时不算输入层，隐藏层是第一层，输出层是第二层。符号约定中，a^[0]输入层作为第零层。<br>隐藏层参数w^[1]和b^[1]，w^[1]是一个4×3矩阵，b^[1]是一个4×1的矩阵，第一个数字4指的是有4个节点或4个隐藏单元，数字3来自3个输入特征<br>输出层参数w^[2]和b^[2]，w^[2]是一个1×4矩阵，b^[2]是一个1×1矩阵。因为隐藏层有四个隐藏单元，而输出层只有一个单元</p>
 
       
     </div>
@@ -346,13 +344,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/12/03/python基本知识（三）/">python基本知识（三）</a></p>
+        <p><span>本文标题:</span><a href="/2018/08/10/神经网络（三）/">神经网络（三）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></p>
-        <p><span>发布时间:</span>2017-12-03, 13:45:02</p>
-        <p><span>最后更新:</span>2017-12-03, 19:40:17</p>
+        <p><span>发布时间:</span>2018-08-10, 11:30:46</p>
+        <p><span>最后更新:</span>2018-08-10, 12:58:43</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/12/03/python基本知识（三）/" title="python基本知识（三）">http://yoursite.com/2017/12/03/python基本知识（三）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/12/03/python基本知识（三）/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/10/神经网络（三）/" title="神经网络（三）">http://yoursite.com/2018/08/10/神经网络（三）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/10/神经网络（三）/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -364,16 +362,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/12/03/python基本知识（四）/">
-                    python基本知识（四）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/12/01/python基本知识（二）/">
-                    python基本知识（二）
+                <a href="/2018/08/05/神经网络（二）/">
+                    神经网络（二）
                 </a>
             </div>
         
@@ -385,7 +377,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#字典"><span class="toc-number">1.</span> <span class="toc-text">字典</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#映射操作"><span class="toc-number">1.1.</span> <span class="toc-text">映射操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重访嵌套"><span class="toc-number">1.2.</span> <span class="toc-text">重访嵌套</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#键的排序：for循环"><span class="toc-number">1.3.</span> <span class="toc-text">键的排序：for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代优化"><span class="toc-number">1.4.</span> <span class="toc-text">迭代优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不存在的键：if测试"><span class="toc-number">1.5.</span> <span class="toc-text">不存在的键：if测试</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络概览"><span class="toc-number">1.</span> <span class="toc-text">神经网络概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络表示"><span class="toc-number">2.</span> <span class="toc-text">神经网络表示</span></a></li></ol>
         
     </div>
     <style>
@@ -421,7 +413,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"python基本知识（三）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"神经网络（三）　| Hexo　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,15 +433,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/12/03/python基本知识（四）/" title="上一篇: python基本知识（四）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/12/01/python基本知识（二）/" title="下一篇: python基本知识（二）">
+            <a href="/2018/08/05/神经网络（二）/" title="下一篇: 神经网络（二）">
                 <i class="fa fa-angle-right"></i>
             </a>
         
