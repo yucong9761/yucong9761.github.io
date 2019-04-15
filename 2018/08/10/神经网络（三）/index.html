@@ -11,7 +11,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no" />
-<meta name="author" content="聪聪&amp;&amp;蝶蝶" />
+<meta name="author" content="聪聪" />
 
 
 
@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/10/神经网络（三）/神经网络（三）/7.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/08/10/神经网络（三）/神经网络（三）/8.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/08/10/神经网络（三）/神经网络（三）/9.PNG">
-<meta property="og:updated_time" content="2018-08-21T11:24:16.149Z">
+<meta property="og:updated_time" content="2018-09-03T13:41:21.005Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="神经网络（三）">
 <meta name="twitter:description" content="神经网络概览很多sigmoid单元堆叠起来构造一个神经网络。这些节点对应两个计算步骤，先计算出z值然后再计算出a的值。符号：x表示输入特征注：上标圆括号（i）用来表示单个训练样本，第i个训练样本。上标方括号[i]表示不同层 eg网络的第一层，第二层……logistic回归中得到z直接计算a作为下一层的输入，如此反复计算a和z。最后计算损失函数。以下神经网络是将logistic回归计算两次：  神经">
@@ -111,7 +111,7 @@
             <img src="/img/avatar.png" class="animated zoomIn">
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/">聪聪&amp;&amp;蝶蝶</a></h1>
+          <h1 class="header-author"><a href="/">聪聪</a></h1>
         </hgroup>
 
         
@@ -245,7 +245,7 @@
       <nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></h1>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">聪聪</a></h1>
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
@@ -253,7 +253,7 @@
                 <img src="/img/avatar.png" class="animated zoomIn">
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></h1>
+              <h1 class="header-author"><a href="/" title="回到主页">聪聪</a></h1>
             </hgroup>
             
             <p class="header-subtitle">月色与雪色之间，你是第三种绝色。</p>
@@ -366,10 +366,17 @@
 <h4 id="不同激活函数利弊"><a href="#不同激活函数利弊" class="headerlink" title="不同激活函数利弊"></a>不同激活函数利弊</h4><p>sigmoid激活函数：除非在二分分类的输出层，否则不使用。<br>tanh函数：比sigmoid几乎在所有场合都更优越。<br>ReLU函数：最常用的默认激活函数。不确定要用哪个的话就用ReLU，或者带泄露的ReLU。<br>带泄露的ReLU函数：公式例如max(0.01z,z)</p>
 <p><strong>深度学习的特点：</strong>在建立神经网络时经常有很多不同的选择，比如：隐藏单元数、激活函数、如何初始化权重 </p>
 <h3 id="非线性激活函数"><a href="#非线性激活函数" class="headerlink" title="非线性激活函数"></a>非线性激活函数</h3><p>g(z)=z 线性激活函数也叫恒等激活函数。这种情况下这个模型输出y或y帽不过是输入特征x的线性组合。<br>只有当你机器学习的是回归问题时，使用线性激活函数，但隐藏单元不可以是线性激活函数，可以用ReLU或tanh或带泄露的ReLU或者其他。唯一可以用线性回归函数的地方通常是输出层</p>
-<h3 id="激活函数的导数"><a href="#激活函数的导数" class="headerlink" title="激活函数的导数"></a>激活函数的导数</h3><p>sigmoid激活函数 g(z)=a=1/(1+e^(-z))<br>求其导数为 1/(1+e^(-z)) × [1 - 1/(1+e^(-z))] 就是 g(z)×[1-g(z)]可以化简为a×(1-a) 优点在于计算出sigmoid函数值a之后可以直接得到sigmoid的导数值</p>
-<p>tanh激活函数 g(z) = a = [ e^z - e^(-z)] / [ e^z + e^(-z)]<br>求其导数将其化简可得导数为 1 - [tanh(z)]^2 即为 1- a^2</p>
-<p>ReLU激活函数和带泄露的ReLU g(x)=max(0,z)</p>
-<p>a</p>
+<h3 id="激活函数的导数"><a href="#激活函数的导数" class="headerlink" title="激活函数的导数"></a>激活函数的导数</h3><ul>
+<li><p>sigmoid激活函数 g(z)=a=1/(1+e^(-z))<br>求其导数为 1/(1+e^(-z)) × [1 - 1/(1+e^(-z))] 就是 g(z)×[1-g(z)]可以化简为a×(1-a) 优点在于计算出sigmoid函数值a之后可以直接得到sigmoid的导数值</p>
+</li>
+<li><p>tanh激活函数 g(z) = a = [ e^z - e^(-z)] / [ e^z + e^(-z)]<br>求其导数将其化简可得导数为 1 - [tanh(z)]^2 即为 1- a^2</p>
+</li>
+<li><p>ReLU激活函数和带泄露的ReLU g(x)=max(0,z)<br>z<0时，导数为0；z>0时，导数为1。 z为0时，导数不存在（实际中将z=0时导数定为1）。</0时，导数为0；z></p>
+</li>
+<li><p>带泄露的ReLU激活函数<br>g(z)=max(0.01z,z)<br>z<0时，导数为0.01；z>0时，导数为1；z=0导数取0.01或1.</0时，导数为0.01；z></p>
+</li>
+</ul>
+<h3 id="神经网络梯度下降算法"><a href="#神经网络梯度下降算法" class="headerlink" title="神经网络梯度下降算法"></a>神经网络梯度下降算法</h3><p>梯度下降算法具体实现去处理单隐层神经网络。<br>`</p>
 
       
     </div>
@@ -379,12 +386,12 @@
     
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2018/08/10/神经网络（三）/">神经网络（三）</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">聪聪&amp;&amp;蝶蝶</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">聪聪</a></p>
         <p><span>发布时间:</span>2018-08-10, 11:30:46</p>
-        <p><span>最后更新:</span>2018-08-21, 19:24:16</p>
+        <p><span>最后更新:</span>2018-09-03, 21:41:21</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/08/10/神经网络（三）/" title="神经网络（三）">http://yoursite.com/2018/08/10/神经网络（三）/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/10/神经网络（三）/　　作者: 聪聪&amp;&amp;蝶蝶" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/10/神经网络（三）/　　作者: 聪聪" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -417,7 +424,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络概览"><span class="toc-number">1.</span> <span class="toc-text">神经网络概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络表示"><span class="toc-number">2.</span> <span class="toc-text">神经网络表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算神经网络的输出"><span class="toc-number">3.</span> <span class="toc-text">计算神经网络的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多样本向量化"><span class="toc-number">4.</span> <span class="toc-text">多样本向量化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向量化实现的解释"><span class="toc-number">5.</span> <span class="toc-text">向量化实现的解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#激活函数"><span class="toc-number">6.</span> <span class="toc-text">激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#缺点"><span class="toc-number">6.1.</span> <span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#经验"><span class="toc-number">6.2.</span> <span class="toc-text">经验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不同激活函数利弊"><span class="toc-number">6.3.</span> <span class="toc-text">不同激活函数利弊</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非线性激活函数"><span class="toc-number">7.</span> <span class="toc-text">非线性激活函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#激活函数的导数"><span class="toc-number">8.</span> <span class="toc-text">激活函数的导数</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络概览"><span class="toc-number">1.</span> <span class="toc-text">神经网络概览</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络表示"><span class="toc-number">2.</span> <span class="toc-text">神经网络表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算神经网络的输出"><span class="toc-number">3.</span> <span class="toc-text">计算神经网络的输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多样本向量化"><span class="toc-number">4.</span> <span class="toc-text">多样本向量化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#向量化实现的解释"><span class="toc-number">5.</span> <span class="toc-text">向量化实现的解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#激活函数"><span class="toc-number">6.</span> <span class="toc-text">激活函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#缺点"><span class="toc-number">6.1.</span> <span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#经验"><span class="toc-number">6.2.</span> <span class="toc-text">经验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#不同激活函数利弊"><span class="toc-number">6.3.</span> <span class="toc-text">不同激活函数利弊</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非线性激活函数"><span class="toc-number">7.</span> <span class="toc-text">非线性激活函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#激活函数的导数"><span class="toc-number">8.</span> <span class="toc-text">激活函数的导数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#神经网络梯度下降算法"><span class="toc-number">9.</span> <span class="toc-text">神经网络梯度下降算法</span></a></li></ol>
         
     </div>
     <style>
@@ -501,7 +508,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2017-2018 聪聪&amp;&amp;蝶蝶
+                2017-2019 聪聪
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
